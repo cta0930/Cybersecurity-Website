@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CTC Cybersecurity Tools and Resources Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;display=swap"> <!-- Font from google for overall appearence -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> <!-- Needed for icons and hamburger menu instead of using image files //may use images later// -->
+    <script src="js/script.js"></script> <!-- One js file so far but may need to separate with rss feeds in cyber news page //Having issues with content load speeds// -->
+</head>
+<body>
+    <!-- Header to be used across webpages with navigation menu (Need to redesign nav section for visual appeal and functionality)-->
+    <section class="header">
+        <nav>
+            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Logo"></a>
+            <!-- hamburger menu for smaller screens //currently not working correctly due to js potentially and need to reorginze the html and css// -->
+            <div class="hiddenmenu" id="menuIcon">
+                <i class="fa fa-bars" onclick="toggleMenu()"></i>
+                <i class="fa fa-times" onclick="toggleMenu()"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/cybernews.html">Cybersecurity News</a></li>
+                    <li><a href="/toolsandresources.html">Tools and Resources</a></li>
+                    <li><a href="/cyberhygiene.html">Cyber Hygiene</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- General headline for site -->
+        <div class="headline">
+            <h2>Welcome to CTC Cybersecurity</h2>
+            <p>Our goal is to provide incredible cybersecurity resources<br />to keep you better equipped to take on the evolving threat landscape!</p>
+            <a href="/about.html" class="about-btn">Learn About CTC Cybersecurity</a>
+        </div>
+    </section>
+    <!-- Section 1: Getting Started in Cybersecurity -->
+    <section id="getting-started" class="resource-section">
+        <h2>Getting Started in Cybersecurity</h2>
+        <p>Cybersecurity is a broad field with plenty of entry points for those eager to learn. Below, we’ve gathered essential resources to help you kickstart your journey, whether you’re new to the subject or looking to enhance your skills. The resources span from free courses to regulatory guidelines, tools, and certifications that will give you hands-on experience and knowledge.</p><br>
+        <div class="resource-container">
+            <div class="resource-box">
+                <!-- Free Learning Resources Section -->
+                <h3>1. Free Learning Resources and Guides</h3>
+                <p>Below are some of the best free learning platforms and guides available to anyone interested in cybersecurity:</p>
+                <ul>
+                    <li><strong><a href="https://www.cybrary.it" target="_blank">Cybrary</a></strong>: Offers free courses on various topics like ethical hacking, network security, penetration testing, and more. The courses are suitable for beginners and advanced learners.</li>
+
+                    <li><strong><a href="https://www.edx.org/learn/cybersecurity" target="_blank">edX Cybersecurity Courses</a></strong>: Partnering with top universities, edX offers free cybersecurity courses covering topics such as cryptography, cloud security, and digital forensics.</li>
+
+                    <li><strong><a href="https://www.udemy.com/topic/cyber-security/free/" target="_blank">Udemy Free Cybersecurity Courses</a></strong>: Explore a range of free cybersecurity courses focusing on ethical hacking, cybersecurity fundamentals, and malware analysis. Many free beginner-friendly courses to get you started.</li>
+
+                    <li><strong><a href="https://www.open.edu/openlearn/science-maths-technology/introduction-cyber-security/content-section-overview" target="_blank">OpenLearn - Introduction to Cybersecurity</a></strong>: A free, comprehensive course from the Open University covering cybersecurity basics, including network security and cyber threats.</li>
+
+                    <li><strong><a href="https://www.coursera.org/courses?query=cybersecurity" target="_blank">Coursera Cybersecurity Courses</a></strong>: Offers free audited courses in cybersecurity and network security from top universities like Stanford and the University of Maryland.</li>
+
+                    <li><strong><a href="https://www.sans.org/open/intro-to-cyber-security" target="_blank">SANS Introduction to Cyber Security</a></strong>: A free, self-paced course designed to provide an introduction to cybersecurity fundamentals and best practices.</li>
+                </ul>
+            </div>
+            <div class="resource-box">
+                <!-- Regulatory Information Section -->
+                <h3>2. Regulatory Information</h3>
+                <p>Understanding regulatory standards is essential for cybersecurity professionals, as these rules guide how security practices should be implemented. Here are some key resources to get you acquainted with regulations:</p>
+                <ul>
+                    <li><strong><a href="https://www.nist.gov/cyberframework" target="_blank">NIST Cybersecurity Framework</a></strong>: Provides a policy framework for private-sector organizations to assess and improve their ability to prevent, detect, and respond to cyberattacks.</li>
+
+                    <li><strong><a href="https://gdpr.eu/" target="_blank">General Data Protection Regulation (GDPR)</a></strong>: A crucial law that provides guidelines on data protection and privacy for individuals within the European Union and affects organizations worldwide.</li>
+
+                    <li><strong><a href="https://www.hhs.gov/hipaa/index.html" target="_blank">HIPAA Compliance</a></strong>: Health Insurance Portability and Accountability Act (HIPAA) provides standards to protect sensitive patient data and is crucial for healthcare organizations.</li>
+
+                    <li><strong><a href="https://csrc.nist.gov/publications/detail/fips/199/final" target="_blank">FIPS 199</a></strong>: Federal Information Processing Standards (FIPS) 199 offers standards for categorizing information and information systems based on the objectives of confidentiality, integrity, and availability.</li>
+
+                    <li><strong><a href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final" target="_blank">NIST SP 800-53</a></strong>: Security and privacy controls for federal information systems and organizations, widely referenced across various industries.</li>
+
+                    <li><strong><a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank">ISO/IEC 27001</a></strong>: A standard that provides a systematic approach to managing sensitive company information, including people, processes, and IT systems.</li>
+                </ul>
+            </div>
+            <div class="resource-box">
+                <!-- Hands-on Practice Section -->
+                <h3>3. Hands-on Practice Platforms</h3>
+                <p>To truly master cybersecurity skills, practical experience is essential. These platforms provide hands-on labs, challenges, and real-world simulations to practice your knowledge:</p>
+                <ul>
+                    <li><strong><a href="https://www.hackthebox.com/" target="_blank">Hack The Box</a></strong>: A platform offering challenges for penetration testing and cybersecurity, designed for professionals looking to hone their skills in real-world scenarios.</li>
+
+                    <li><strong><a href="https://www.vulnhub.com/" target="_blank">VulnHub</a></strong>: A platform providing "boot-to-root" machines, offering virtual environments where users can practice vulnerability discovery and exploitation.</li>
+
+                    <li><strong><a href="https://tryhackme.com/" target="_blank">TryHackMe</a></strong>: A gamified platform that provides an accessible way to learn cybersecurity by offering guided labs and challenges for both beginners and experienced professionals.</li>
+
+                    <li><strong><a href="https://www.rangeforce.com/" target="_blank">RangeForce</a></strong>: An interactive platform that offers cybersecurity exercises in a simulated environment, focusing on team-based defense strategies and incident response.</li>
+                </ul>
+            </div>
+            <div class="resource-box">
+                <!-- Certifications Section -->
+                <h3>4. Certifications</h3>
+                <p>Cybersecurity certifications are essential for professionals to validate their knowledge and skills. Below are some of the top certification organizations and their key certificates:</p>
+                <ul>
+                    <li><strong><a href="https://www.isc2.org/Certifications/CISSP" target="_blank">Certified Information Systems Security Professional (CISSP)</a></strong>: One of the most recognized and sought-after certifications, focusing on managerial and technical aspects of cybersecurity.</li>
+
+                    <li><strong><a href="https://www.comptia.org/certifications/security" target="_blank">CompTIA Security+</a></strong>: A beginner-friendly certification that covers foundational cybersecurity concepts and is often the starting point for many professionals.</li>
+
+                    <li><strong><a href="https://www.offensive-security.com/pwk-oscp/" target="_blank">Offensive Security Certified Professional (OSCP)</a></strong>: A technical certification focusing on hands-on skills in penetration testing and ethical hacking.</li>
+
+                    <li><strong><a href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/" target="_blank">Certified Ethical Hacker (CEH)</a></strong>: A widely recognized certification that demonstrates skills in ethical hacking and penetration testing, with a focus on vulnerabilities, threats, and attack vectors.</li>
+
+                    <li><strong><a href="https://www.giac.org/certifications/security/GSEC" target="_blank">GIAC Security Essentials (GSEC)</a></strong>: Offered by SANS Institute, this certification covers essential security skills, including incident handling, network security, and cryptography.</li>
+
+                    <li><strong><a href="https://www.isaca.org/credentialing/cism" target="_blank">Certified Information Security Manager (CISM)</a></strong>: Focuses on information security management, risk management, and governance frameworks, often targeted at security professionals in leadership roles.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Cybersecurity Tools -->
+    <section id="cyber-tools" class="resource-section">
+        <h2>Cybersecurity Tools and Resources</h2>
+        <p>Cybersecurity professionals rely on and use a wide variety of tools to protect networks, identify vulnerabilities, and respond to threats. Below, we've created a list of some of the most essential tools. Many of these tools are free and open-source, providing robust capabilities for cybersecurity professionals and enthusiasts alike.</p><br>
+        <div class="tools-container">
+            <div class="tools-box">
+                <!-- Virtualization and VM Creation Section -->
+                <h3>1. Virtualization & VM Creation</h3>
+                <p>Virtualization is a critical aspect of cybersecurity, allowing professionals to create isolated environments to test malware, perform penetration testing, or set up secure development environments. Below are some of the top platforms:</p>
+                <ul>
+                    <li><strong><a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a></strong>: A free, open-source virtualization tool that enables the creation of virtual machines (VMs) on your computer. It supports various operating systems, including Linux, Windows, and macOS.</li>
+
+                    <li><strong><a href="https://www.vmware.com/products/workstation-player.html" target="_blank">VMware Workstation Player</a></strong>: A free tool for running VMs on a desktop, offering advanced networking and storage capabilities for professionals.</li>
+
+                    <li><strong><a href="https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-on-windows-server" target="_blank">Hyper-V</a></strong>: A built-in feature of Windows 10 Pro and Windows Server, Hyper-V provides hardware virtualization, allowing you to create and manage VMs on Windows.</li>
+
+                    <li><strong><a href="https://xenproject.org/" target="_blank">Xen Project</a></strong>: An open-source virtualization platform that allows users to create and manage secure, high-performance VMs. Commonly used in server environments.</li>
+                </ul>
+            </div>
+            <div class="tools-box">
+                <!-- Online Vulnerability Scanning Section -->
+                <h3>2. Online Vulnerability Scanning</h3>
+                <p>Vulnerability scanning tools help identify weaknesses in systems, networks, or applications that could be exploited by attackers. These tools are crucial in both defensive and offensive cybersecurity strategies:</p>
+                <ul>
+                    <li><strong><a href="https://www.tenable.com/products/nessus" target="_blank">Nessus by Tenable</a></strong>: One of the most popular vulnerability scanners, Nessus provides a comprehensive security assessment, scanning for vulnerabilities such as misconfigurations, default passwords, and malware.</li>
+
+                    <li><strong><a href="https://www.openvas.org/" target="_blank">OpenVAS</a></strong>: An open-source vulnerability scanner that identifies security issues in networks and applications, providing a robust, community-supported solution.</li>
+
+                    <li><strong><a href="https://www.qualys.com/" target="_blank">Qualys Community Edition</a></strong>: Provides free vulnerability scanning and patch management tools. It's especially useful for small to medium-sized organizations looking for a cloud-based solution.</li>
+
+                    <li><strong><a href="https://pentest-tools.com/" target="_blank">Pentest-Tools.com</a></strong>: Offers a suite of penetration testing and vulnerability scanning tools, covering web applications, networks, and external IP addresses. It also includes reconnaissance tools like subdomain finders and SSL checkers.</li>
+                </ul>
+            </div>
+            <div class="tools-box">
+                <!-- Scripting and Programming Section -->
+                <h3>3. Scripting & Programming</h3>
+                <p>Scripting and programming are essential skills in cybersecurity, allowing professionals to automate tasks, develop tools, and exploit vulnerabilities. Below are platforms that provide free resources for learning key languages like Python, Bash, and more:</p>
+                <ul>
+                    <li><strong><a href="https://www.learnpython.org/" target="_blank">LearnPython.org</a></strong>: A free interactive platform for learning Python, one of the most widely used languages in cybersecurity for automation, scripting, and tool development.</li>
+
+                    <li><strong><a href="https://www.codecademy.com/learn/learn-bash-scripting" target="_blank">Codecademy - Bash Scripting</a></strong>: Provides free tutorials for learning Bash scripting, a powerful tool for automating tasks in Unix/Linux environments, crucial for penetration testers and system administrators.</li>
+
+                    <li><strong><a href="https://github.com/" target="_blank">GitHub</a></strong>: The largest open-source platform for sharing code, GitHub is a key resource for cybersecurity professionals to find tools, share scripts, and collaborate on projects.</li>
+
+                    <li><strong><a href="https://book.hacktricks.xyz/" target="_blank">HackTricks</a></strong>: A comprehensive guide that includes a variety of techniques, from living off the land binaries (LOLBins) to advanced techniques for cybersecurity and penetration testing.</li>
+                </ul>
+            </div>
+            <div class="tools-box">
+                <!-- Cyber Threat Intelligence Section -->
+                <h3>4. Cyber Threat Intelligence (CTI)</h3>
+                <p>Cyber threat intelligence platforms help track, analyze, and defend against cyber threats. Below are some top resources for gathering threat intelligence, both for proactive defense and 	response to incidents:</p>
+                <ul>
+                    <li><strong><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></strong>: A free service that analyzes files and URLs for malware, leveraging over 70 antivirus scanners and URL/domain blacklisting services to detect malicious content.</li>
+
+                    <li><strong><a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK</a></strong>: A globally accessible knowledge base of adversary tactics and techniques based on real-world observations, used to develop effective threat models and methodologies.</li>
+
+                    <li><strong><a href="https://www.shodan.io/" target="_blank">Shodan</a></strong>: Often referred to as the “search engine for hackers,” Shodan lets users search for vulnerable devices connected to the internet, providing insights into the security posture of IoT and other connected systems.</li>
+
+                    <li><strong><a href="https://threatmap.checkpoint.com/" target="_blank">Check Point Threat Map</a></strong>: A real-time threat map that visualizes cyberattacks happening around the world, giving users insights into the global cyber threat landscape.</li>
+
+                    <li><strong><a href="https://www.malwaredomainlist.com/" target="_blank">Malware Domain List</a></strong>: A free resource that tracks domains involved in distributing malware, often used by security researchers to identify and block malicious URLs.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="pen-testing-tools" class="pen-testing-tools-section">
+        <h2>Penetration Testing Tools</h2>
+        <div class="pen-testing-tools-wrapper">
+            <!-- Left column for 10 of the 20 pen testing tools -->
+            <div class="pen-tools-column">
+                <div class="pen-tool" onclick="toggleTool(1)">
+                    <h3>Wireshark</h3>
+                    <div class="pen-tool-content" id="tool-content-1">
+                        <p>Wireshark is a network protocol analyzer used to capture and inspect packets in real-time.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(2)">
+                    <h3>Nmap</h3>
+                    <div class="pen-tool-content" id="tool-content-2">
+                        <p>Nmap is a powerful tool for network discovery and security auditing.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(3)">
+                    <h3>Burp Suite</h3>
+                    <div class="pen-tool-content" id="tool-content-3">
+                        <p>Burp Suite is a web application security testing tool used to find vulnerabilities.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(4)">
+                    <h3>Metasploit</h3>
+                    <div class="pen-tool-content" id="tool-content-4">
+                        <p>Metasploit is a comprehensive exploitation framework for launching and managing attacks.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(5)">
+                    <h3>OWASP ZAP</h3>
+                    <div class="pen-tool-content" id="tool-content-5">
+                        <p>OWASP ZAP is a proxy used for finding vulnerabilities in web applications.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(6)">
+                    <h3>John the Ripper</h3>
+                    <div class="pen-tool-content" id="tool-content-6">
+                        <p>John the Ripper is a password cracking tool used for Unix-based systems.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(7)">
+                    <h3>Aircrack-ng</h3>
+                    <div class="pen-tool-content" id="tool-content-7">
+                        <p>Aircrack-ng is a tool for assessing the security of Wi-Fi networks.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(8)">
+                    <h3>Nikto</h3>
+                    <div class="pen-tool-content" id="tool-content-8">
+                        <p>Nikto is a web server scanner that identifies vulnerabilities and misconfigurations.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(9)">
+                    <h3>Hydra</h3>
+                    <div class="pen-tool-content" id="tool-content-9">
+                        <p>Hydra is a tool for brute-forcing login credentials over a wide range of protocols.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(10)">
+                    <h3>Snort</h3>
+                    <div class="pen-tool-content" id="tool-content-10">
+                        <p>Snort is an open-source intrusion detection system that monitors network traffic.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right column for 10 of the 20 pen testing tools -->
+            <div class="pen-tools-column">
+                <div class="pen-tool" onclick="toggleTool(11)">
+                    <h3>SQLmap</h3>
+                    <div class="pen-tool-content" id="tool-content-11">
+                        <p>SQLmap is an open-source tool that automates the detection and exploitation of SQL injection flaws.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(12)">
+                    <h3>Maltego</h3>
+                    <div class="pen-tool-content" id="tool-content-12">
+                        <p>Maltego is used for open-source intelligence and forensics, mapping relationships between people, companies, domains, etc.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(13)">
+                    <h3>Empire</h3>
+                    <div class="pen-tool-content" id="tool-content-13">
+                        <p>Empire is a post-exploitation framework for running PowerShell agents and executing payloads on compromised systems.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(14)">
+                    <h3>Hashcat</h3>
+                    <div class="pen-tool-content" id="tool-content-14">
+                        <p>Hashcat is a password recovery tool that supports a wide range of hashing algorithms.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(15)">
+                    <h3>Ettercap</h3>
+                    <div class="pen-tool-content" id="tool-content-15">
+                        <p>Ettercap is a tool for network traffic interception and analysis in real-time.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(16)">
+                    <h3>Autopsy</h3>
+                    <div class="pen-tool-content" id="tool-content-16">
+                        <p>Autopsy is a digital forensics platform used for analyzing hard drives and smartphones for evidence recovery.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(17)">
+                    <h3>BeEF</h3>
+                    <div class="pen-tool-content" id="tool-content-17">
+                        <p>BeEF (Browser Exploitation Framework) is a penetration testing tool that focuses on web browsers.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(18)">
+                    <h3>Recon-ng</h3>
+                    <div class="pen-tool-content" id="tool-content-18">
+                        <p>Recon-ng is a reconnaissance framework with modules for performing automated recon on web targets.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(19)">
+                    <h3>Social-Engineer Toolkit (SET)</h3>
+                    <div class="pen-tool-content" id="tool-content-19">
+                        <p>SET is a framework for conducting social engineering attacks, including phishing and credential harvesting.</p>
+                    </div>
+                </div>
+                <div class="pen-tool" onclick="toggleTool(20)">
+                    <h3>Wapiti</h3>
+                    <div class="pen-tool-content" id="tool-content-20">
+                        <p>Wapiti is a web application vulnerability scanner that allows you to audit the security of your web applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Security Section -->
+    <section id="cloud-security" class="content-section">
+        <h2>Cloud Security & Resources</h2>
+        <p>Securing your cloud environment is crucial to ensure data integrity, availability, and confidentiality. This section provides essential cloud security tools, platforms, and learning resources to help you protect your cloud infrastructure effectively.</p>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h3>What is Cloud Security?</h3>
+                <p>Cloud security refers to the technology, policies, controls, and services that protect cloud computing environments from threats. It includes managing identity access, encryption, and security posture monitoring.</p>
+            </div>
+            <div class="flex-box">
+                <h3>Key Cloud Security Concepts</h3>
+                <ul>
+                    <li><strong>Shared Responsibility Model</strong>: Users must secure their applications and data, while cloud providers secure the infrastructure.</li>
+                    <li><strong>Data Encryption</strong>: Encrypt data in transit and at rest to protect against unauthorized access.</li>
+                    <li><strong>IAM</strong>: Identity and Access Management ensures only authorized users can access critical systems.</li>
+                    <li><strong>Security Posture Management</strong>: Continuously monitor for vulnerabilities and misconfigurations.</li>
+                </ul>
+            </div>
+            <div class="flex-box">
+                <h3>Top Cloud Security Tools</h3>
+                <ul>
+                    <li><a href="https://aws.amazon.com/security-hub/" target="_blank">AWS Security Hub</a></li>
+                    <li><a href="https://cloud.google.com/security-command-center" target="_blank">Google Cloud Security Command Center</a></li>
+                    <li><a href="https://azure.microsoft.com/en-us/services/security-center/" target="_blank">Azure Security Center</a></li>
+                    <li><a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a></li>
+                </ul>
+            </div>
+            <div class="flex-box">
+                <h3>Cloud Security Learning Resources</h3>
+                <ul>
+                    <li><a href="https://cloudsecurityalliance.org/" target="_blank">Cloud Security Alliance (CSA)</a></li>
+                    <li><a href="https://www.sans.org/cloud-security" target="_blank">SANS Cloud Security</a></li>
+                    <li><a href="https://aws.amazon.com/training/security/" target="_blank">AWS Cloud Security Training</a></li>
+                    <li><a href="https://learn.microsoft.com/en-us/training/azure/security/" target="_blank">Azure Security Training</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Security Section -->
+    <section id="mobile-security" class="content-section">
+        <h2>Mobile Security Tools & Resources</h2>
+        <p>Mobile devices are critical in both personal and business life. This section covers key tools, best practices, and resources to secure mobile devices from cyber threats.</p>
+
+        <div class="flex-container">
+            <div class="flex-box">
+                <h3>What is Mobile Security?</h3>
+                <p>Mobile security refers to protecting mobile devices from data breaches, malware, and phishing attacks. It involves encryption, app security, and secure access management.</p>
+            </div>
+            <div class="flex-box">
+                <h3>Key Mobile Security Concepts</h3>
+                <ul>
+                    <li><strong>Device Encryption</strong>: Encrypt all data stored on mobile devices.</li>
+                    <li><strong>App Security</strong>: Ensure apps are free of vulnerabilities via testing.</li>
+                    <li><strong>Mobile Device Management</strong>: Use MDM to manage security policies and monitor devices.</li>
+                    <li><strong>Two-Factor Authentication</strong>: Implement 2FA for secure access.</li>
+                </ul>
+            </div>
+            <div class="flex-box">
+                <h3>Top Mobile Security Tools</h3>
+                <ul>
+                    <li><a href="https://www.zimperium.com/" target="_blank">Zimperium</a></li>
+                    <li><a href="https://www.lookout.com/" target="_blank">Lookout Mobile Security</a></li>
+                    <li><a href="https://www.symantec.com/products/endpoint-protection-mobile" target="_blank">Symantec Endpoint Protection Mobile</a></li>
+                    <li><a href="https://www.avast.com/en-us/free-mobile-security" target="_blank">Avast Mobile Security</a></li>
+                </ul>
+            </div>
+            <div class="flex-box">
+                <h3>Mobile Security Best Practices</h3>
+                <ul>
+                    <li>Keep software updated.</li>
+                    <li>Install apps from trusted sources.</li>
+                    <li>Use strong passwords and 2FA.</li>
+                    <li>Be cautious of phishing attempts.</li>
+                    <li>Encrypt your device.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Cybersecurity Architecture Table -->
+    <section class="cyber-architecture">
+        <h2>Cybersecurity Architecture Overview</h2>
+        <p>
+            A robust cybersecurity architecture is essential for protecting sensitive data, ensuring the availability and integrity of critical systems, and defending against emerging cyber threats. Below is a table that outlines key components of a well-rounded cybersecurity architecture, detailing their purpose and the crucial role they play in safeguarding systems.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Security Tool</th>
+                    <th>Purpose</th>
+                    <th>Why It's Crucial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Endpoint Detection and Response (EDR/XDR)</strong></td>
+                    <td>
+                        EDR provides continuous monitoring and response to advanced threats on endpoints (e.g., laptops, desktops), while XDR integrates data across multiple vectors (network, server, cloud, etc.) for a broader defense mechanism.
+                    </td>
+                    <td>
+                        EDR/XDR are essential for detecting sophisticated, persistent threats, allowing organizations to respond quickly before damage occurs. With XDR, security teams gain extended visibility across all critical areas of infrastructure.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Antivirus (AV) Software</strong></td>
+                    <td>
+                        Traditional antivirus software scans for known malware signatures and prevents unauthorized programs from executing on endpoints.
+                    </td>
+                    <td>
+                        While considered basic, antivirus is still a fundamental layer of protection, especially when integrated into broader security stacks, catching many common malware and phishing attacks.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Firewalls</strong></td>
+                    <td>
+                        Firewalls monitor incoming and outgoing network traffic and decide whether to allow or block specific traffic based on predefined security rules.
+                    </td>
+                    <td>
+                        Firewalls create a barrier between trusted and untrusted networks, filtering traffic and preventing malicious actors from infiltrating internal systems.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Intrusion Detection & Prevention Systems (IDS/IPS)</strong></td>
+                    <td>
+                        IDS monitors network or system activities for malicious activities or violations of policies. IPS, on the other hand, detects and prevents intrusions by automatically taking action.
+                    </td>
+                    <td>
+                        IDS/IPS are crucial for detecting and blocking malicious activities in real-time, reducing the risk of exploitation and data breaches.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Data Loss Prevention (DLP)</strong></td>
+                    <td>
+                        DLP software ensures that sensitive information does not leave the organization in an unauthorized manner, monitoring and controlling data flow across endpoints, networks, and emails.
+                    </td>
+                    <td>
+                        DLP is critical in preventing data breaches and ensuring regulatory compliance by ensuring confidential data, like financial or personal information, is secure.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Encryption Tools</strong></td>
+                    <td>
+                        Encryption tools protect data at rest and in transit by converting sensitive information into unreadable code that can only be decrypted with the appropriate key.
+                    </td>
+                    <td>
+                        Encryption is vital in safeguarding sensitive information from unauthorized access, particularly when data is transmitted over insecure networks or stored in cloud environments.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Identity & Access Management (IAM)</strong></td>
+                    <td>
+                        IAM controls user access to critical information and systems. It ensures that only authorized users have access to necessary data and systems, based on their roles.
+                    </td>
+                    <td>
+                        By enforcing strict user authentication and authorization policies, IAM reduces the risk of insider threats and unauthorized access to sensitive systems.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Security Information & Event Management (SIEM)</strong></td>
+                    <td>
+                        SIEM systems collect and analyze security data from across the infrastructure, providing real-time threat monitoring and generating alerts for security incidents.
+                    </td>
+                    <td>
+                        SIEM is crucial for gaining full visibility across the network, identifying and correlating security incidents, and enabling rapid response to potential breaches.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Vulnerability Management Tools</strong></td>
+                    <td>
+                        Vulnerability management tools, such as Nessus and OpenVAS, scan systems and networks for known vulnerabilities and misconfigurations, providing remediation suggestions.
+                    </td>
+                    <td>
+                        These tools help prevent cyber-attacks by ensuring that systems are up-to-date with the latest patches and free from exploitable vulnerabilities.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Cloud Security Platforms</strong></td>
+                    <td>
+                        Cloud security platforms provide continuous security monitoring and controls over cloud environments, ensuring data integrity, privacy, and regulatory compliance.
+                    </td>
+                    <td>
+                        With the growing use of cloud services, cloud security tools ensure that data stored in or transmitted through the cloud is protected from unauthorized access and breaches.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- Footer to be used across all pages -->
+    <footer>
+        <div class="footercontainer">
+            <div class="footerlogo">
+                <img src="images/ctclogo69.png" alt="CTC Logo">
+                <h4>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h4>
+            </div>
+            <!-- Footer contact info (email, phone, address) -->
+            <div class="footercontact">
+                <h4>Contact Information</h4>
+                <p>Phone: 518-309-2163<br>Email: <a href="mailto:cody.tilley@ctccybersecurity.com">cody.tilley@ctccybersecurity.com</a></p>
+                <address>Mailing Address:<br>P.O. Box 119,<br>Voorheesville, NY 12186</address>
+            </div>
+            <!-- Quicklinks section for important pages -->
+            <div class="footernavigation">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="/privacypolicy.html" target="_blank">Privacy Policy</a></li>
+                    <li><a href="/cookiepolicy.html" target="_blank">Cookie Policy</a></li>
+                    <li><a href="/termsandconditions.html" target="_blank">Terms & Conditions</a></li>
+                    <li><a href="/contact.html" target="_blank">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Footer social media contact -->
+            <div class="footersocialmedia">
+                <h4>Social Media</h4>
+                <a href="https://www.facebook.com/cta0930/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                    </svg>
+                </a>
+                <br>
+                <a href="https://www.linkedin.com/in/ctilley0124/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                    </svg>
+                </a>
+                <br>
+                <a href="https://github.com/cta0930" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 480 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2z"></path>
+                    </svg>
+                </a>
+                <br>
+                <a href="https://discord.com/users/695969247825887243/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="5 5 13 13" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.914 14.58a8.998 8.998 0 0 1-.484.104 7.06 7.06 0 0 1-2.664-.01c-.154-.03-.372-.083-.653-.158l-.921 1.197c-2.273-.073-3.137-1.596-3.137-1.596 0-3.381 1.481-6.122 1.481-6.122 1.481-1.133 2.89-1.102 2.89-1.102l.403.525a1.12 1.12 0 0 1 .112-.01 8.527 8.527 0 0 1 2.314.01l.442-.525s1.41-.031 2.89 1.103c0 0 1.482 2.74 1.482 6.121 0 0-.875 1.522-3.148 1.596l-1.007-1.134zM10.076 11C9.475 11 9 11.45 9 12s.485 1 1.076 1c.6 0 1.075-.45 1.075-1 .01-.55-.474-1-1.075-1zm3.848 0c-.6 0-1.075.45-1.075 1s.485 1 1.075 1c.601 0 1.076-.45 1.076-1s-.475-1-1.076-1z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- Footer banner for disclosure and legal use -->
+        <div class="footerbanner">
+            <p>
+                The content provided on this site, including recommendations, tools, and advice, is for informational and educational purposes only.
+                CTC Cybersecurity is not responsible for any direct, indirect, or consequential damages arising from the use or reliance on any of the tools or content provided on this site. By using this site, you agree to do so at your own risk. For more details, please review our <a href="/termsandconditions.html" target="_blank">Terms and Conditions.</a>
+            </p>
+        </div>
+    </footer>
+    <!-- Scroll to top function //fix the js for smooth scroll// -->
+    <a href="#top" class="scroll-to-top" id="scrolltoTopBtn">
+        &#8679;
+    </a>
+</body>
+</html>
