@@ -3,3 +3,5 @@
 #    Deny from all
     Allow from env=REDIRECT_STATUS
 </FilesMatch>
+
+##redacted##
