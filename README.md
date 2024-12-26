@@ -1,7 +1,8 @@
-# WebsiteBuild
-Website Creation for UAlbany CINF201 Course
+# Cybersecurity Website
+Website Creation for UAlbany Course Fall 2024
 
-Final project part I website creation aimed at developing a cybersecurity website tailored to provide cyber security news updates, tools, resources, and cyber hygiene advice.
-The plan is to consolidate widely known tools and resources onto a website that will help point people in the right direction to explore cybersecurity resources.
+This is the website I created for a basic webdev course. The goal of this site was to create a dynamic website tailored to provide cybersecurity news/updates, tools, resources, and cyber hygiene advice.
 
-This is a work in progress and will be a large project kept private for the time being.
+This is a work in progress that I will add to over time. I am completing my degree so the bulk of this will happen as time allows but I would love to hear any feedback or advice since I am far from a web development pro.
+
+Thanks for checking this out!
