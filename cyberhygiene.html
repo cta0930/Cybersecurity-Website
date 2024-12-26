@@ -1,23 +1,23 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>CTC Cybersecurity Cyber Hygiene Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;display=swap"> <!-- Font from google for overall appearence -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> <!-- Needed for icons and hamburger menu instead of using image files //may use images later// -->
-    <script src="js/script.js"></script> <!-- One js file so far but may need to separate with rss feeds in cyber news page //Having issues with content load speeds// -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Hygiene Tips & Tools - CTC Cybersecurity</title>
+    <meta name="description" content="Explore key cyber hygiene practices and tools to secure your online presence. Learn password management, privacy tips, and use tools like browser analysis for better security.">
+    <meta name="keywords" content="Cyber Hygiene, Online Security, Privacy Tips, Password Management, Browser Analysis, Cybersecurity Tools">
+    <meta name="author" content="CTC Cybersecurity">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ctccybersecurity.com/cyberhygiene">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header to be used across webpages with navigation menu (Need to redesign nav section for visual appeal and functionality)-->
     <section class="header">
         <nav>
-            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Logo"></a>
-            <!-- hamburger menu for smaller screens //currently not working correctly due to js potentially and need to reorginze the html and css// -->
-            <div class="hiddenmenu" id="menuIcon">
-                <i class="fa fa-bars" onclick="toggleMenu()"></i>
-                <i class="fa fa-times" onclick="toggleMenu()"></i>
-            </div>
+            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo"></a>
             <div class="nav-links" id="navLinks">
                 <ul>
                     <li><a href="/index.html">Home</a></li>
@@ -28,29 +28,134 @@
                 </ul>
             </div>
         </nav>
-        <!-- General headline for site -->
         <div class="headline">
             <h2>Welcome to CTC Cybersecurity</h2>
-            <p>Our goal is to provide incredible cybersecurity resources<br />to keep you better equipped to take on the evolving threat landscape!</p>
-            <a href="/about.html" class="about-btn">Learn About CTC Cybersecurity</a>
+            <p>My goal is to provide cybersecurity resources<br>that will keep you better equipped to face evolving cyber threats!</p>
+            <a href="../portfolio.html" class="about-btn">Learn More About Me</a>
         </div>
     </section>
+    <!-- Cyber hygiene page introduction using global css -->
+    <section class="featuredcontent">
+        <h2>Why Should Cyber Hygiene Matter?</h2>
+        <p>We live in a complex and ever evolving digital world. Taking a strong stance on cyber hygiene protects you, your family, and your business from becoming a victim of cyber criminals</p>
+        <div class="features-container">
+            <div class="features-box">
+                <h3>What is Cyber Hygiene?</h3>
+                <p>Cyber hygiene is the routine practices that people and organizations employ to maintain system health and overall online security. This includes everything from proper updates to technology you use, backups of data, password management, and more!</p>
+            </div>
+            <div class="features-box">
+                <h3>Why It's Important</h3>
+                <p>Properly maintaining your devices and accounts is crucial to protect your sensitive data from hackers and breaches. Even small mistakes can lead to risks and harm which is why practicing smart cyber hygiene is so important.</p>
+            </div>
+            <div class="features-box">
+                <h3>What Visitors To This Page Can Expect</h3>
+                <p>This page is geared toward offering key resources and information on how to maintain good cyber hygiene. Here you will find tips, tools, and resources to better secure your online presence.</p>
+            </div>
+        </div>
+    </section>
+    <!-- This is largely based off: https://www.geeksforgeeks.org/create-a-password-strength-checker-using-html-css-and-javascript/ as well as imprint.js, leaflet.com, and a few additional js references will be in the js file itself. Github was a huge help putting this together. See browseranalysis.js for references -->
+    <section class="cyber-hygiene-tools">
+        <h1>Below you will find a few web-based tools</h1>
+        <p>These tools are built to help you better understand your privacy and improve your password use</p>
+        <div class="cyber-hygiene-tools-container">
+            <h2>A Simple Browser Analysis Tool</h2>
+            <p>
+                Discover some ways your browser reveals identity, behavior, and device details to advertisers and websites.<br>
+                <strong>Note:</strong> <span style="font-style: italic;">All data analyzed is processed locally in your browser and is not saved or shared by this site.</span>
+            </p>
+            <section id="analysis-section">
+                <button id="analyze-btn">Analyze My Browser</button>
+                <button id="clear-btn" style="display: none;">Clear Results</button>
+                <div id="results">
+                    <!-- Browser information -->
+                    <div class="result-section" id="browser-info">
+                        <h2>Browser & System Information</h2>
+                        <p>This section reveals basic details about your browser and operating system that websites use to optimize content delivery and track you.</p>
+                        <ul></ul>
+                    </div>
 
+                    <!-- Network information using ipapi and leaflet -->
+                    <div class="result-section" id="network-info">
+                        <h2>Network & Location</h2>
+                        <p>Your IP address and network information provide details about your location and Internet Service Provider (ISP), which can be used for targeted advertising and geolocation tracking.</p>
+                        <ul></ul>
+                        <div id="map" style="height: 300px; width: 100%; display: none;"></div>
+                    </div>
 
-    <!-- Footer to be used across all pages -->
+                    <!-- Fingerprinting data from user -->
+                    <div class="result-section" id="fingerprinting-info">
+                        <h2>Device & Fingerprinting Details</h2>
+                        <p>Fingerprinting techniques use your browser and device characteristics to create a unique identifier, allowing websites to track you even without cookies.</p>
+                        <ul></ul>
+                    </div>
+
+                    <!-- Behavioral tracking info -->
+                    <div class="result-section" id="tracking-info">
+                        <h2>Behavioral Tracking & History</h2>
+                        <p>This section shows how websites track your browsing behavior using cookies, referrers, and other mechanisms to build a profile of your online activities.</p>
+                        <ul></ul>
+                    </div>
+
+                    <!-- Security headers (simulated only: build incomplete but will be here for future changes) -->
+                    <div class="result-section" id="security-headers">
+                        <h2>Security Headers</h2>
+                        <p>Security headers protect users from cross-site scripting (XSS) attacks, clickjacking, and other common vulnerabilities. This test checks whether your browser enforces these security measures.</p>
+                        <ul></ul>
+                    </div>
+
+                    <!-- Recommendations aspect of the browser analysis tool -->
+                    <div class="result-section" id="recommendations">
+                        <h2>Privacy Recommendations</h2>
+                        <p>Based on the analysis, here are steps you can take to enhance your online privacy and security.</p>
+                        <ul></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Simple quiz for cyber hygiene and awareness. See quizscript.js for references -->
+        <div class="cyber-hygiene-tools-container">
+            <div class="cyber-hygiene-quiz">
+                <h2>Test Your Cyber Hygiene Knowledge</h2>
+                <p>Think you're on top of your cybersecurity practices? Take our Cyber Hygiene Quiz and discover how well you’re protecting yourself online. Get actionable recommendations tailored to your answers!</p>
+                <div>
+                    <button class="take-quiz-btn" id="navigateToQuizBtn">Take the Quiz</button>
+                </div>
+            </div>
+            <!-- Password strength checker. See script.js for references -->
+            <div class="password-strength-checker">
+                <h2>Privacy Strength Checker</h2>
+                <form id="password-strength-form">
+                    <label class="password-tools-lbl" for="password-checker">Enter Password:</label>
+                    <input type="password" class="password-input" id="password-checker" placeholder="Enter password">
+                    <p id="password-strength-text">Strength: </p>
+                    <p id="password-crack-time"></p>
+                </form>
+            </div>
+            <!-- Password generator tool. See script.js for references -->
+            <div class="password-generator">
+                <h2>Complex Password Generator</h2>
+                <form id="password-generator-form">
+                    <label class="password-tools-lbl" for="password-length">Password Length:</label>
+                    <input type="number" class="password-input" id="password-length" value="12" min="8" max="128">
+                    <button type="button" class="password-generator-btn" id="generate-password-btn">Generate Password</button>
+                    <div class="generated-password-box">
+                        <p id="generated-password"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="footercontainer">
             <div class="footerlogo">
-                <img src="images/ctclogo69.png" alt="CTC Logo">
-                <h4>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h4>
+                <img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo">
+                <h5>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h5>
             </div>
-            <!-- Footer contact info (email, phone, address) -->
             <div class="footercontact">
                 <h4>Contact Information</h4>
                 <p>Phone: 518-309-2163<br>Email: <a href="mailto:cody.tilley@ctccybersecurity.com">cody.tilley@ctccybersecurity.com</a></p>
                 <address>Mailing Address:<br>P.O. Box 119,<br>Voorheesville, NY 12186</address>
             </div>
-            <!-- Quicklinks section for important pages -->
             <div class="footernavigation">
                 <h4>Important Links</h4>
                 <ul>
@@ -60,7 +165,6 @@
                     <li><a href="/contact.html" target="_blank">Contact Us</a></li>
                 </ul>
             </div>
-            <!-- Footer social media contact -->
             <div class="footersocialmedia">
                 <h4>Social Media</h4>
                 <a href="https://www.facebook.com/cta0930/" target="_blank">
@@ -88,7 +192,6 @@
                 </a>
             </div>
         </div>
-        <!-- Footer banner for disclosure and legal use -->
         <div class="footerbanner">
             <p>
                 The content provided on this site, including recommendations, tools, and advice, is for informational and educational purposes only.
@@ -96,9 +199,46 @@
             </p>
         </div>
     </footer>
-    <!-- Scroll to top function //fix the js for smooth scroll// -->
-    <a href="#top" class="scroll-to-top" id="scrolltoTopBtn">
+    <a href="#top" class="scroll-to-top" id="scrollToTopBtn">
         &#8679;
     </a>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/browseranalysis.js"></script>
+    <script src="js/script.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Cyber Hygiene Tips & Tools",
+            "url": "https://ctccybersecurity.com/cyberhygiene",
+            "description": "Learn essential cyber hygiene practices and tools to improve your online security.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CTC Cybersecurity",
+                "url": "https://ctccybersecurity.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ctccybersecurity.com/images/ctclogo69.png"
+                }
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://ctccybersecurity.com/index.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Cyber Hygiene",
+                        "item": "https://ctccybersecurity.com/cyberhygiene"
+                    }
+                ]
+            }
+        }
+    </script>
 </body>
 </html>

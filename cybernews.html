@@ -1,24 +1,23 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>CTC Cybersecurity Cyber News Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;display=swap"> <!-- Font from google for overall appearence -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> <!-- Needed for icons and hamburger menu instead of using image files //may use images later// -->
-    <script src="js/script.js"></script> <!-- One js file so far but may need to separate with rss feeds in cyber news page //Having issues with content load speeds// -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News & Trends - CTC Cybersecurity</title>
+    <meta name="description" content="Stay updated with the latest cybersecurity news, trends, and insights. Explore topics like ransomware, APT groups, cloud security, and more.">
+    <meta name="keywords" content="Cybersecurity News, Cyber Threats, Ransomware, APT Groups, Cloud Security, Zero Trust, Cybersecurity Updates">
+    <meta name="author" content="CTC Cybersecurity">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ctccybersecurity.com/cybernews">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- Header to be used across webpages with navigation menu (Need to redesign nav section for visual appeal and functionality)-->
     <section class="header">
         <nav>
-            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Logo"></a>
-            <!-- hamburger menu for smaller screens //currently not working correctly due to js potentially and need to reorginze the html and css// -->
-            <div class="hiddenmenu" id="menuIcon">
-                <i class="fa fa-bars" onclick="toggleMenu()"></i>
-                <i class="fa fa-times" onclick="toggleMenu()"></i>
-            </div>
+            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo"></a>
             <div class="nav-links" id="navLinks">
                 <ul>
                     <li><a href="/index.html">Home</a></li>
@@ -29,11 +28,10 @@
                 </ul>
             </div>
         </nav>
-        <!-- General headline for site -->
         <div class="headline">
             <h2>Welcome to CTC Cybersecurity</h2>
-            <p>Our goal is to provide incredible cybersecurity resources<br />to keep you better equipped to take on the evolving threat landscape!</p>
-            <a href="/about.html" class="about-btn">Learn About CTC Cybersecurity</a>
+            <p>My goal is to provide cybersecurity resources<br>that will keep you better equipped to face evolving cyber threats!</p>
+            <a href="../portfolio.html" class="about-btn">Learn More About Me</a>
         </div>
     </section>
     <!-- Current events section for topics to check out linked to google searching -->
@@ -110,11 +108,11 @@
             </div>
         </div>
     </section>
-    <!-- Cyber news rss feed section -->
+    <!-- Cyber news rss feed section see rssfeed.js for additional notes -->
     <section class="rss-feeds">
         <h2>Cybersecurity News & Updates</h2>
         <div class="rss-carousel" id="rss-feed-1">
-            <h3>Stay Updated with The Hacker News</h3>
+            <h3>Stay Updated with CISA</h3>
             <div class="carousel-container">
                 <div class="rss-content">
                 </div>
@@ -125,7 +123,7 @@
             </div>
         </div>
         <div class="rss-carousel" id="rss-feed-2">
-            <h3>Bleeping Computer News</h3>
+            <h3>Articles from Krebs on Security</h3>
             <div class="carousel-container">
                 <div class="rss-content">
                 </div>
@@ -147,42 +145,71 @@
             </div>
         </div>
     </section>
-    <!-- Cybersecurity stats section -->
-    <section class="cyber-stats">
-        <h2>Key Cybersecurity Statistics</h2>
-        <div class="stats-grid">
-            <div class="stat">
-                <h3>Cybercrime Damage Costs</h3>
-                <p>Expected to reach $10.5 trillion annually by 2025.</p>
+    <!-- Cybersecurity stats section with italics for references -->
+    <section class="cyber-stats-section">
+        <div class="cyber-stats-container">
+            <h2><i class="fa fa-shield"></i> Key Cybersecurity Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>Cybercrime Damage Costs</h3>
+                    <p>Expected to reach <strong>$10.5 trillion annually</strong> by 2025.</p>
+                    <p><em>Source: Cybersecurity Ventures</em></p>
+                </div>
+                <div class="stat">
+                    <h3>Average Cost of a Data Breach</h3>
+                    <p>As of 2023, the average data breach costs <strong>$4.24 million</strong>.</p>
+                    <p><em>Source: IBM Cost of a Data Breach Report</em></p>
+                </div>
+                <div class="stat">
+                    <h3>Ransomware Attacks</h3>
+                    <p>Ransomware attacks are predicted to target a business every <strong>11 seconds</strong>.</p>
+                    <p><em>Source: Cybersecurity Ventures</em></p>
+                </div>
+                <div class="stat">
+                    <h3>Phishing Attacks</h3>
+                    <p>Phishing accounts for <strong>90% of data breaches</strong>.</p>
+                    <p><em>Source: Verizon Data Breach Investigations Report</em></p>
+                </div>
             </div>
-            <div class="stat">
-                <h3>Average Cost of a Data Breach</h3>
-                <p>As of 2023, the average data breach costs $4.24 million.</p>
-            </div>
-            <div class="stat">
-                <h3>Ransomware Attacks</h3>
-                <p>Ransomware attacks are predicted to attack a business every 11 seconds.</p>
-            </div>
-            <div class="stat">
-                <h3>Phishing Attacks</h3>
-                <p>Phishing remains the most common attack vector, responsible for 90% of breaches.</p>
+        </div>
+        <div class="cyber-workforce-container">
+            <h2><i class="fa fa-users"></i> Cybersecurity Workforce Growth & Shortages</h2>
+            <div class="workforce-grid">
+                <div class="workforce-stat">
+                    <h3>Cybersecurity Workforce Gap</h3>
+                    <p>There is a global shortage of <strong>3.4 million cybersecurity professionals</strong> in 2023.</p>
+                    <p><em>Source: (ISC)² Cybersecurity Workforce Study</em></p>
+                </div>
+                <div class="workforce-stat">
+                    <h3>Workforce Growth</h3>
+                    <p>The cybersecurity workforce has grown by <strong>10%</strong> over the past year, reaching <strong>4.7 million professionals</strong>.</p>
+                    <p><em>Source: (ISC)² Cybersecurity Workforce Study</em></p>
+                </div>
+                <div class="workforce-stat">
+                    <h3>Demand for Cybersecurity Professionals</h3>
+                    <p>The demand for cybersecurity professionals is expected to grow by <strong>33%</strong> from 2023 to 2030.</p>
+                    <p><em>Source: U.S. Bureau of Labor Statistics</em></p>
+                </div>
+                <div class="workforce-stat">
+                    <h3>Average Salary</h3>
+                    <p>The average salary for cybersecurity professionals is <strong>$119,000</strong> per year in the U.S.</p>
+                    <p><em>Source: U.S. Bureau of Labor Statistics</em></p>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Cyber incidents and threat actor section -->
+    <!-- Cyber incidents and threat actor section (will need to figure out how to address the three charts somehow) -->
     <section class="cyber-stats-chart">
         <h2>Current Cybersecurity Landscape</h2>
         <p>Stay updated with the most recent cyber incidents, their costs, and the key threat actors involved.</p>
         <div class="cybercharts">
-            <!-- Cyber incidents chart -->
+            <!-- Cyber incidents chart with mock data -->
             <div class="chart-container">
                 <h3>Total Cyber Incidents</h3>
                 <div class="charts">
                     <canvas id="cyberIncidentsChart"></canvas>
                 </div>
             </div>
-
             <script>
                 const ctxIncidents = document.getElementById('cyberIncidentsChart').getContext('2d');
                 const cyberIncidentsChart = new Chart(ctxIncidents, {
@@ -205,8 +232,7 @@
                     }
                 });
             </script>
-
-            <!-- Cost to business and individuals -->
+            <!-- Cost to business and individuals with mock data for now -->
             <div class="chart-container">
                 <h3>Cost to Business & Individuals</h3>
                 <canvas id="cyberCostChart"></canvas>
@@ -235,7 +261,7 @@
                 });
             </script>
 
-            <!-- Top ten threat actors right now -->
+            <!-- Top ten threat actors semi correct but mostly made up for visual purposes -->
             <div class="chart-container">
                 <h3>Top 10 Threat Actors</h3>
                 <canvas id="threatActorsChart"></canvas>
@@ -286,21 +312,23 @@
             };
         </script>
     </section>
-    <!-- Search section -->
+    <!-- Search section to push search query to google  -->
     <section class="search">
         <h2>Search for More Information</h2>
-        <p>Use the search tool to explore the web for additional cybersecurity resources and news.</p>
-        <form action="https://www.google.com/search" method="GET" target="_blank">
-            <input type="text" name="q" placeholder="Search cybersecurity topics..." required>
-            <button type="submit">Search</button>
-        </form>
+        <p>Use the search tool to explore the web for more cybersecurity resources and news:</p>
+        <div class="form">
+            <form action="https://www.google.com/search" method="GET" target="_blank">
+                <input type="text" name="q" placeholder="Search for cybersecurity topics here..." required>
+                <button type="submit" class="searchbtn">Search</button>
+            </form>
+        </div>
     </section>
     <!-- Footer to be used across all pages -->
     <footer>
         <div class="footercontainer">
             <div class="footerlogo">
-                <img src="images/ctclogo69.png" alt="CTC Logo">
-                <h4>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h4>
+                <img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo">
+                <h5>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h5>
             </div>
             <!-- Footer contact info (email, phone, address) -->
             <div class="footercontact">
@@ -318,7 +346,7 @@
                     <li><a href="/contact.html" target="_blank">Contact Us</a></li>
                 </ul>
             </div>
-            <!-- Footer social media contact -->
+            <!-- Footer social media contact resused from homework assignment -->
             <div class="footersocialmedia">
                 <h4>Social Media</h4>
                 <a href="https://www.facebook.com/cta0930/" target="_blank">
@@ -355,8 +383,45 @@
         </div>
     </footer>
     <!-- Scroll to top function //fix the js for smooth scroll// -->
-    <a href="#top" class="scroll-to-top" id="scrolltoTopBtn">
+    <a href="#top" class="scroll-to-top" id="scrollToTopBtn">
         &#8679;
     </a>
+    <script src="js/rssfeed.js"></script>
+    <script src="js/script.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Cybersecurity News & Trends",
+            "url": "https://ctccybersecurity.com/cybernews",
+            "description": "Stay updated with the latest cybersecurity news, trends, and insights. Explore topics like ransomware, APT groups, cloud security, and more.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CTC Cybersecurity",
+                "url": "https://ctccybersecurity.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ctccybersecurity.com/images/ctclogo69.png"
+                }
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://ctccybersecurity.com/index.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Cybersecurity News",
+                        "item": "https://ctccybersecurity.com/cybernews"
+                    }
+                ]
+            }
+        }
+    </script>
 </body>
 </html>

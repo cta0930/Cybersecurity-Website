@@ -1,0 +1,138 @@
+﻿/*
+================================================================================================|
+General styling for under construction webpage built based on W3 template
+================================================================================================|
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: "Arial", sans-serif;
+}
+
+.bgimg {
+    background-image: url('https://buildops.com/_next/image/?url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F9342c7ee957c42b28f68132232c5a4d7%252F63d564fbefe14d389ef1febb90bf6b3f&w=3840&q=75');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bgimg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.bgimg img {
+    max-height: 95px;
+    width: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.content-wrapper h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.content-wrapper p {
+    font-size: 20px;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.countdown {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #00ff00;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.footer {
+    position: relative;
+    display: block;
+    text-align: center;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #fff;
+    z-index: 1;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.topleft, .bottomleft {
+    position: absolute;
+    left: 20px;
+    color: white;
+    z-index: 1;
+}
+
+.topleft {
+    top: 20px;
+}
+
+.bottomleft {
+    bottom: 20px;
+}
+
+hr {
+    width: 40%;
+    border: 1px solid #fff;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper h1 {
+        font-size: 32px;
+    }
+
+    .countdown {
+        font-size: 24px;
+    }
+
+    .bottomleft {
+        text-align: center;
+    }
+
+    .footer {
+        font-size: 12px;
+        align-content: center;
+    }
+}

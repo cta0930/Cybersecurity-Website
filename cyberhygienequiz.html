@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Hygiene Quiz | Test Your Cybersecurity Knowledge & Improve Online Safety</title>
+    <meta name="description" content="Take the Cyber Hygiene Quiz to evaluate your cybersecurity habits. Get tailored recommendations to enhance your online safety and protect your digital presence.">
+    <meta name="keywords" content="Cyber Hygiene Quiz, Cybersecurity Knowledge, Digital Safety Test, Cybersecurity Tips, Online Security Practices, Enhance Cyber Hygiene">
+    <link rel="canonical" href="https://ctccybersecurity.com/cyberhygienequiz">
+    <link rel="stylesheet" href="css/cyberhygienequiz.css">
+</head>
+<body>
+    <header class="quiz-header">
+        <h1>Cyber Hygiene Quiz</h1>
+        <p>Test your cybersecurity knowledge and receive tailored recommendations to enhance your digital safety!</p>
+    </header>
+    <!-- See quizscript.js for references -->
+    <section class="quiz-container">
+        <form id="cyber-hygiene-quiz-form" class="quiz-form">
+            <div class="quiz-question">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <h3>1. How often do you change your passwords?</h3>
+                    <label><input type="radio" name="q1" value="0"> Only when I foget it</label>
+                    <label><input type="radio" name="q1" value="2"> Every 3 months</label>
+                    <label><input type="radio" name="q1" value="1"> Every year</label>
+                    <label><input type="radio" name="q1" value="0"> I never change them</label>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <h3>2. Do you use two-factor authentication (2FA) or Muli-Factor Authentication?</h3>
+                    <label><input type="radio" name="q2" value="2"> Yes, for all accounts</label>
+                    <label><input type="radio" name="q2" value="0"> I have no clue what that is</label>
+                    <label><input type="radio" name="q2" value="1"> Only for sensitive accounts</label>
+                    <label><input type="radio" name="q2" value="0"> No, I find it inconvenient</label>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <h3>3. How do you store your passwords?</h3>
+                    <label><input type="radio" name="q3" value="0"> At my friends house</label>
+                    <label><input type="radio" name="q3" value="1"> I memorize them</label>
+                    <label><input type="radio" name="q3" value="2"> In a password manager</label>
+                    <label><input type="radio" name="q3" value="0"> I write them down</label>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question">
+                    <h3>4. Do you use public Wi-Fi without a VPN?</h3>
+                    <label><input type="radio" name="q4" value="0"> I dont know what a VPN is</label>
+                    <label><input type="radio" name="q4" value="1"> Sometimes</label>
+                    <label><input type="radio" name="q4" value="0"> All the time</label>
+                    <label><input type="radio" name="q4" value="2"> Never</label>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question">
+                    <h3>5. How do you secure your home Wi-Fi?</h3>
+                    <label><input type="radio" name="q5" value="2"> Strong password and WPA3</label>
+                    <label><input type="radio" name="q5" value="1"> Default settings</label>
+                    <label><input type="radio" name="q5" value="0"> I dont know how</label>
+                    <label><input type="radio" name="q5" value="0"> I leave it wide open for hackers</label>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question">
+                    <h3>6. How often do you back up your data?</h3>
+                    <label><input type="radio" name="q6" value="0"> I dont know how</label>
+                    <label><input type="radio" name="q6" value="1"> Monthly</label>
+                    <label><input type="radio" name="q6" value="2"> Weekly</label>
+                    <label><input type="radio" name="q6" value="0"> Rarely or never</label>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question">
+                    <h3>7. Do you update your devices regularly?</h3>
+                    <label><input type="radio" name="q7" value="2"> Always</label>
+                    <label><input type="radio" name="q7" value="0"> Im not sure how to check this</label>
+                    <label><input type="radio" name="q7" value="1"> Sometimes</label>
+                    <label><input type="radio" name="q7" value="0"> Only when issues arise</label>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question">
+                    <h3>8. Do you review app permissions?</h3>
+                    <label><input type="radio" name="q8" value="1"> Occasionally</label>
+                    <label><input type="radio" name="q8" value="0"> Never</label>
+                    <label><input type="radio" name="q8" value="2"> Regularly</label>
+                    <label><input type="radio" name="q8" value="0"> I let apps do whatever on my devices</label>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question">
+                    <h3>9. How often do you run antivirus scans?</h3>
+                    <label><input type="radio" name="q9" value="2"> Weekly</label>
+                    <label><input type="radio" name="q9" value="0"> I think it is pointless</label>
+                    <label><input type="radio" name="q9" value="1"> Occasionally</label>
+                    <label><input type="radio" name="q9" value="0"> Never</label>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question">
+                    <h3>10. Do you use unique passwords for each account?</h3>
+                    <label><input type="radio" name="q10" value="0"> I just use a really easy to remember password</label>
+                    <label><input type="radio" name="q10" value="2"> Always</label>
+                    <label><input type="radio" name="q10" value="1"> For important accounts</label>
+                    <label><input type="radio" name="q10" value="0"> I reuse passwords</label>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="quiz-question">
+                    <h3>11. Do you use privacy-focused browsers?</h3>
+                    <label><input type="radio" name="q11" value="0"> Privacy just isnt important to me</label>
+                    <label><input type="radio" name="q11" value="1"> Sometimes</label>
+                    <label><input type="radio" name="q11" value="0"> No, I use Chrome/Edge</label>
+                    <label><input type="radio" name="q11" value="2"> Yes, like Brave/Firefox</label>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="quiz-question">
+                    <h3>12. Do you disable cookies and trackers?</h3>
+                    <label><input type="radio" name="q12" value="1"> Sometimes</label>
+                    <label><input type="radio" name="q12" value="0"> The only cookies I know of are the edible kind</label>
+                    <label><input type="radio" name="q12" value="2"> Yes, through settings</label>
+                    <label><input type="radio" name="q12" value="0"> Never</label>
+
+                </div>
+
+                <!-- Question 13 -->
+                <div class="quiz-question">
+                    <h3>13. Do you encrypt sensitive files before sharing them online?</h3>
+                    <label><input type="radio" name="q13" value="1"> Only for highly sensitive files</label>
+                    <label><input type="radio" name="q13" value="0"> I rarely share sensitive files</label>
+                    <label><input type="radio" name="q13" value="0"> I dont use encryption</label>
+                    <label><input type="radio" name="q13" value="2"> Always</label>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="quiz-question">
+                    <h3>14. How do you handle suspicious emails or links?</h3>
+                    <label><input type="radio" name="q14" value="2"> I report and delete them immediately</label>
+                    <label><input type="radio" name="q14" value="0"> I click on links only if they seem legitimate</label>
+                    <label><input type="radio" name="q14" value="0"> I open and read them</label>
+                    <label><input type="radio" name="q14" value="1"> I ignore them</label>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="quiz-question">
+                    <h3>15. Do you use ad blockers or tracker blockers in your browser?</h3>
+                    <label><input type="radio" name="q15" value="0"> No, I dont use any blockers</label>
+                    <label><input type="radio" name="q15" value="2"> Yes, for all websites</label>
+                    <label><input type="radio" name="q15" value="1"> Only for certain websites</label>
+                    <label><input type="radio" name="q15" value="0"> I dont know what they are</label>
+                </div>
+
+                <!-- Question 16 -->
+                <div class="quiz-question">
+                    <h3>16. How do you manage software downloads?</h3>
+                    <label><input type="radio" name="q16" value="1"> From trusted third-party sites</label>
+                    <label><input type="radio" name="q16" value="0"> I download from anywhere</label>
+                    <label><input type="radio" name="q16" value="2"> Only from official or verified sources</label>
+                    <label><input type="radio" name="q16" value="0"> I rarely check the source</label>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="quiz-question">
+                    <h3>17. How do you secure your mobile device?</h3>
+                    <label><input type="radio" name="q17" value="2"> Screen lock, encryption, and remote tracking enabled</label>
+                    <label><input type="radio" name="q17" value="0"> No screen lock</label>
+                    <label><input type="radio" name="q17" value="0"> I dont secure my mobile device</label>
+                    <label><input type="radio" name="q17" value="1"> Screen lock enabled only</label>
+                </div>
+
+                <!-- Question 18 -->
+                <div class="quiz-question">
+                    <h3>18. How often do you review privacy settings on social media?</h3>
+                    <label><input type="radio" name="q18" value="0"> Im not sure how to do this</label>
+                    <label><input type="radio" name="q18" value="2"> Monthly or more often</label>
+                    <label><input type="radio" name="q18" value="1"> A few times a year</label>
+                    <label><input type="radio" name="q18" value="0"> Rarely or never</label>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="quiz-question">
+                    <h3>19. Do you regularly check for data breaches involving your accounts?</h3>
+                    <label><input type="radio" name="q19" value="2"> Yes, using online tools like Have I Been Pwned</label>
+                    <label><input type="radio" name="q19" value="1"> Occasionally</label>
+                    <label><input type="radio" name="q19" value="0"> Never</label>
+                    <label><input type="radio" name="q19" value="0"> Im sure breaches dont apply to me</label>
+                </div>
+
+                <!-- Question 20 -->
+                <div class="quiz-question">
+                    <h3>20. Do you review permissions for apps and software after installing them?</h3>
+                    <label><input type="radio" name="q20" value="0"> If I can download it, it must be safe</label>
+                    <label><input type="radio" name="q20" value="1"> Only if something seems wrong</label>
+                    <label><input type="radio" name="q20" value="2"> Yes, always</label>
+                    <label><input type="radio" name="q20" value="0"> No, I dont</label>
+                </div>
+                <button type="button" id="quiz-submit-btn" class="quiz-btn">Submit Quiz</button>
+            </div>
+        </form>
+        <div id="quiz-results" class="quiz-results hidden">
+            <h2>Your Cyber Hygiene Score</h2>
+            <p id="score"></p>
+            <p id="advice"></p>
+            <button type="button" class="quiz-btn" onclick="resetQuiz()">Retake Quiz</button>
+            <button type="button" class="quiz-btn" onclick="window.location.href='/cyberhygiene.html'">Return to Cyber Hygiene Page</button>
+        </div>
+    </section>
+    <!-- Footer to be used across all pages -->
+    <footer>
+        <div class="footercontainer">
+            <div class="footerlogo">
+                <img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo">
+                <h5>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h5>
+            </div>
+            <!-- Footer contact info (email, phone, address) -->
+            <div class="footercontact">
+                <h4>Contact Information</h4>
+                <p>Phone: 518-309-2163<br>Email: <a href="mailto:cody.tilley@ctccybersecurity.com">cody.tilley@ctccybersecurity.com</a></p>
+                <address>Mailing Address:<br>P.O. Box 119,<br>Voorheesville, NY 12186</address>
+            </div>
+            <!-- Quicklinks section for important pages -->
+            <div class="footernavigation">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="/privacypolicy.html" target="_blank">Privacy Policy</a></li>
+                    <li><a href="/cookiepolicy.html" target="_blank">Cookie Policy</a></li>
+                    <li><a href="/termsandconditions.html" target="_blank">Terms & Conditions</a></li>
+                    <li><a href="/contact.html" target="_blank">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Footer social media contact -->
+            <div class="footersocialmedia">
+                <h4>Social Media</h4>
+                <a href="https://www.facebook.com/cta0930/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                    </svg>
+                </a>
+                <br>
+                <a href="https://www.linkedin.com/in/ctilley0124/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                    </svg>
+                </a>
+                <br>
+                <a href="https://github.com/cta0930" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 480 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2z"></path>
+                    </svg>
+                </a>
+                <br>
+                <a href="https://discord.com/users/695969247825887243/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="5 5 13 13" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.914 14.58a8.998 8.998 0 0 1-.484.104 7.06 7.06 0 0 1-2.664-.01c-.154-.03-.372-.083-.653-.158l-.921 1.197c-2.273-.073-3.137-1.596-3.137-1.596 0-3.381 1.481-6.122 1.481-6.122 1.481-1.133 2.89-1.102 2.89-1.102l.403.525a1.12 1.12 0 0 1 .112-.01 8.527 8.527 0 0 1 2.314.01l.442-.525s1.41-.031 2.89 1.103c0 0 1.482 2.74 1.482 6.121 0 0-.875 1.522-3.148 1.596l-1.007-1.134zM10.076 11C9.475 11 9 11.45 9 12s.485 1 1.076 1c.6 0 1.075-.45 1.075-1 .01-.55-.474-1-1.075-1zm3.848 0c-.6 0-1.075.45-1.075 1s.485 1 1.075 1c.601 0 1.076-.45 1.076-1s-.475-1-1.076-1z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- Footer banner for disclosure and legal use -->
+        <div class="footerbanner">
+            <p>
+                The content provided on this site, including recommendations, tools, and advice, is for informational and educational purposes only.
+                CTC Cybersecurity is not responsible for any direct, indirect, or consequential damages arising from the use or reliance on any of the tools or content provided on this site. By using this site, you agree to do so at your own risk. For more details, please review our <a href="/termsandconditions.html" target="_blank">Terms and Conditions.</a>
+            </p>
+        </div>
+    </footer>
+    <!-- Scroll to top function //fix the js for smooth scroll// -->
+    <a href="#top" class="scroll-to-top" id="scrollToTopBtn">
+        &#8679;
+    </a>
+    <script src="js/quizscript.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Quiz",
+            "name": "Cyber Hygiene Quiz",
+            "description": "Test your cybersecurity knowledge with this 20-question Cyber Hygiene Quiz.",
+            "audience": {
+                "@type": "Audience",
+                "audienceType": "Cybersecurity enthusiasts, online users"
+            },
+            "educationalAlignment": {
+                "@type": "EducationalAlignment",
+                "alignmentType": "educationalSubject",
+                "targetName": "Cybersecurity"
+            }
+        }
+    </script>
+</body>
+</html>

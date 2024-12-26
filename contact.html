@@ -1,23 +1,23 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>CTC Cybersecurity Contact Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;display=swap"> <!-- Font from google for overall appearence -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> <!-- Needed for icons and hamburger menu instead of using image files //may use images later// -->
-    <script src="js/script.js"></script> <!-- One js file so far but may need to separate with rss feeds in cyber news page //Having issues with content load speeds// -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact CTC Cybersecurity | Secure Your Digital World</title>
+    <meta name="description" content="Get in touch with CTC Cybersecurity for expert advice on cybersecurity, digital privacy, and online security tools.">
+    <meta name="keywords" content="Contact CTC Cybersecurity, Cybersecurity Help, Digital Privacy, Online Security, Cyber Tools">
+    <meta name="author" content="CTC Cybersecurity">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ctccybersecurity.com/contact">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <!-- Header to be used across webpages with navigation menu (Need to redesign nav section for visual appeal and functionality)-->
+    <!-- Altered headline to better fit the contact page -->
     <section class="header">
         <nav>
-            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Logo"></a>
-            <!-- hamburger menu for smaller screens //currently not working correctly due to js potentially and need to reorginze the html and css// -->
-            <div class="hiddenmenu" id="menuIcon">
-                <i class="fa fa-bars" onclick="toggleMenu()"></i>
-                <i class="fa fa-times" onclick="toggleMenu()"></i>
-            </div>
+            <a href="/index.html"><img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo"></a>
+            <h1>CTC Cybersecurity</h1>
             <div class="nav-links" id="navLinks">
                 <ul>
                     <li><a href="/index.html">Home</a></li>
@@ -28,29 +28,41 @@
                 </ul>
             </div>
         </nav>
-        <!-- General headline for site -->
-        <div class="headline">
-            <h2>Welcome to CTC Cybersecurity</h2>
-            <p>Our goal is to provide incredible cybersecurity resources<br />to keep you better equipped to take on the evolving threat landscape!</p>
-            <a href="/about.html" class="about-btn">Learn About CTC Cybersecurity</a>
+    </section>
+    <!-- Full page contact form, copied and slightly altered from https://codepen.io/dianalisova/pen/eYJGgKq/ -->
+    <section class="contactform">
+        <div class="contact-container">
+            <div class="left-col">
+            </div>
+            <div class="right-col">
+                <h1>Contact us</h1>
+                <p>Questions about cybersecurity, digital privacy, or simply want to reach out?</p>
+                <!-- See contact-handler.php and contactscript.js for references -->
+                <form id="contact-form">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    <label for="message">Message</label>
+                    <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea>
+                    <button type="button" id="submit">Send</button>
+                </form>
+                <div id="error"></div>
+                <div id="success-msg"></div>
+            </div>
         </div>
     </section>
-
-
-    <!-- Footer to be used across all pages -->
     <footer>
         <div class="footercontainer">
             <div class="footerlogo">
-                <img src="images/ctclogo69.png" alt="CTC Logo">
-                <h4>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h4>
+                <img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo">
+                <h5>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h5>
             </div>
-            <!-- Footer contact info (email, phone, address) -->
             <div class="footercontact">
                 <h4>Contact Information</h4>
                 <p>Phone: 518-309-2163<br>Email: <a href="mailto:cody.tilley@ctccybersecurity.com">cody.tilley@ctccybersecurity.com</a></p>
                 <address>Mailing Address:<br>P.O. Box 119,<br>Voorheesville, NY 12186</address>
             </div>
-            <!-- Quicklinks section for important pages -->
             <div class="footernavigation">
                 <h4>Important Links</h4>
                 <ul>
@@ -60,7 +72,6 @@
                     <li><a href="/contact.html" target="_blank">Contact Us</a></li>
                 </ul>
             </div>
-            <!-- Footer social media contact -->
             <div class="footersocialmedia">
                 <h4>Social Media</h4>
                 <a href="https://www.facebook.com/cta0930/" target="_blank">
@@ -88,7 +99,6 @@
                 </a>
             </div>
         </div>
-        <!-- Footer banner for disclosure and legal use -->
         <div class="footerbanner">
             <p>
                 The content provided on this site, including recommendations, tools, and advice, is for informational and educational purposes only.
@@ -96,9 +106,33 @@
             </p>
         </div>
     </footer>
-    <!-- Scroll to top function //fix the js for smooth scroll// -->
-    <a href="#top" class="scroll-to-top" id="scrolltoTopBtn">
+    <a href="#top" class="scroll-to-top" id="scrollToTopBtn">
         &#8679;
     </a>
+    <script src="js/contactscript.js"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Contact CTC Cybersecurity",
+            "description": "Get in touch with CTC Cybersecurity for expert advice on cybersecurity, digital privacy, and online security tools.",
+            "url": "https://ctccybersecurity.com/contact",
+            "publisher": {
+                "@type": "Organization",
+                "name": "CTC Cybersecurity",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ctccybersecurity.com/images/ctclogo69.png"
+                }
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-518-309-2163",
+                "email": "cody.tilley@ctccybersecurity.com",
+                "contactType": "Customer Support",
+                "areaServed": "Global"
+            }
+        }
+    </script>
 </body>
 </html>

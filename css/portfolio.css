@@ -1,0 +1,1029 @@
+﻿/* CSS DIRECTORY FOR ORGANIZATION AND QUICK FORMATTING 
+|=========================================================|
+|=========================================================|
+|Section 1: General layout                               =|
+|    a. Header general style                             =|
+|    b. Navigation menu                                  =|
+|    c. Footer general style                             =|
+|                                                        =|
+|Section 2: Button styles                                =|
+|    a. Submit button                                    =|
+|    b. Calculate button                                 =|
+|                                                        =|
+|Section 3: Containers and flex boxes                    =|
+|                                                        =|
+|Section 4: Salary calculator style                      =|
+|                                                        =|
+|Section 5: Media responsiveness                         =|
+|                                                        =|
+|Section 6: Miscellaneous                                =|
+|    Hamburger menu                                      =|
+|    Specific adjustments                                =|
+|    Scrollbar                                           =|
+|                                                        =|
+|=========================================================|
+|=========================================================|
+
+/*
+=======================================================|
+Section 1: General layout and reusable css
+=======================================================|
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #2a7a78;
+}
+
+/*
+============================|
+S1a. Header general style
+============================|
+*/
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 22px;
+    color: white;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    z-index: 99;
+    opacity: 0;
+    animation: to_bottom 1s ease forwards;
+}
+
+.Home {
+    min-height: 100vh;
+    background-color: #17222e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0px 60px;
+    overflow: hidden;
+}
+
+.text-box {
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-box h1 {
+    font-size: 40px;
+    animation: to_right 1s ease forwards .6s;
+}
+
+.text-box h1:nth-child(2) {
+    animation-delay: .7s;
+}
+
+.text-box .skills {
+    color: #00bfff;
+}
+
+.text-box p {
+    margin: 35px 0;
+    font-size: 16px;
+    width: 90%;
+    animation: to_right 1s ease forwards .8s;
+}
+
+.icon-box {
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.icon-box a, i {
+    color: #00bfff;
+    padding: 7px;
+    font-size: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    animation: to_right 1s ease forwards 1s;
+}
+
+.icon-box i:hover {
+    color: white;
+    background-color: #00bfff;
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.img {
+    width: 35%;
+    margin-right: 50px;
+    background-position: center;
+    background-size: cover;
+    border: 4px solid white;
+    border-radius: 50%;
+    box-shadow: 5px 5px 50px #00bfff;
+    background-color: #00bfff;
+    animation: to_left 1s ease forwards 1s;
+    opacity: 0;
+}
+
+.text-box * {
+    opacity: 0;
+}
+
+.text-box span {
+    opacity: 1;
+}
+
+@keyframes to_bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes to_right {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes to_left {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+============================|
+S1b. Navigation general style
+============================|
+*/
+.rtn {
+    display: flex;
+    align-items: center;
+}
+
+.rtn h1 {
+    font-size: 18px;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.rtn img {
+    max-height: 95px;
+    width: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+/* Side navigation styling with collapse to the left until scrolled beyond home section */
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    background-color: rgba(23, 34, 46, 0.8);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 0;
+    z-index: 1000;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.side-nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.side-nav:hover {
+    width: 200px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 191, 255, 0.5);
+}
+
+.side-nav::before {
+    content: '⇨';
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    border-radius: 5px;
+    background-color: rgba(0, 191, 255, 0.8);
+    box-shadow: 0px 0px 5px rgba(0, 191, 255, 0.6);
+}
+
+.side-nav::before:hover {
+    background-color: #00bfff;
+    transform: scale(1.2);
+}
+
+.nav-link {
+    display: none;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.side-nav:hover .nav-link {
+    display: block;
+}
+
+.nav-link + .nav-link {
+    border-top: 1px solid #ddd;
+}
+
+/*
+============================|
+S1c. Footer general style
+============================|
+*/
+footer {
+    background-color: #1D2B44;
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+footer a {
+    color: #00AEEF;
+}
+
+.footercontainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 15px;
+    align-items: flex-start;
+}
+
+.footerlogo img {
+    max-height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    margin-top: 10px;
+}
+
+.footerlogo h4 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.footerlogo p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+footer h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0px;
+}
+
+footer ul li a {
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #f44336;
+    text-decoration: underline;
+}
+
+.footerbanner {
+    width: 90%;
+    line-height: 1.5rem;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.footerbanner p {
+    text-align: center;
+    color: #ffffff;
+}
+
+/*
+=======================================================|
+Section 2: Button styles          
+=======================================================|
+*/
+.submit-button {
+    background-color: #00AEEF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #f44336;
+}
+
+.btn-box {
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    position: relative;
+    color: black;
+    width: 180px;
+    height: 48px;
+    border: 2px solid #00bfff;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+    z-index: 0;
+    animation: to_right 1s ease forwards 1s;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00bfff;
+    z-index: -1;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform .3s;
+}
+
+.btn-2,
+.btn:hover {
+    color: white;
+}
+
+.btn:hover::before,
+.btn:nth-child(2)::before {
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.btn:nth-child(2):hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.btn:nth-child(2):hover {
+    color: black;
+}
+
+/* Scroll to top borrowed from final project part I */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1d2b44;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10001;
+    transition: transform 0.3s;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-8px);
+}
+/*
+=======================================================|
+Section 3: Containers and flex boxes
+=======================================================|
+*/
+/* Section general style to reuse within pages */
+.page-content {
+    min-height: 50vh;
+    padding: 60px 80px;
+    background-color: #17222e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 200px 20px;
+}
+
+.page-content h2 {
+    color: #00bfff;
+    margin-bottom: 20px;
+    font-size: 32px;
+    width: 95%;
+}
+
+/* Flexbox container general style */
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    background-color: #1f2b3a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Items within the flex container */
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f2b3a;
+    padding: 20px;
+    flex: 1;
+    max-width: 32%;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flex-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+.flex-item h3 {
+    color: #00bfff;
+    margin-bottom: 15px;
+}
+
+.flex-item p {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
+}
+
+.flex-item a {
+    color: #00bfff;
+}
+
+.flex-item ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.flex-item ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    text-align: left;
+    color: white;
+}
+
+/*
+=======================================================|
+Section 4: Calculator Webpage
+=======================================================|
+*/
+/* Salary calculator styles partially from github:https://github.com/shuddha2021/Statewise-Tax-Calculator/blob/main/index.html */
+#calculator-tool {
+    padding: 20px 40px;
+    background-color: #17222e;
+    width: 100%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#calculator-tool h2 {
+    font-size: 32px;
+    color: #00bfff;
+    margin-bottom: 10px;
+}
+
+#calculator-tool p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.calculator-form {
+    width: 50%;
+    padding: 10px 10px;
+}
+
+.calculator-form label {
+    display: block;
+    font-size: 16px;
+    color: #00bfff;
+    margin-top: 15px;
+}
+
+.calculator-form input,
+.calculator-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.calculator-form button {
+    background-color: #00AEEF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.calculator-form button:hover {
+    background-color: #f44336;
+}
+
+.calculator-results {
+    width: 45%;
+    background-color: #1D2B44;
+    margin: 20px 0;
+    padding: 80px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.calculator-results h3 {
+    font-size: 24px;
+    color: #00bfff;
+    margin-bottom: 15px;
+}
+
+.calculator-results p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.calculator-results span {
+    font-weight: bold;
+    color: #f44336;
+}
+
+/*
+=======================================================|
+Section 5: Media responsiveness
+=======================================================|
+*/
+@media (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+    }
+
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 18px;
+        color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        z-index: 99;
+        opacity: 1;
+        background-color: #17222e;
+        animation: to_bottom 1s ease forwards;
+    }
+
+    header img {
+        width: 80%;
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .Home {
+        min-height: 100vh;
+        background-color: #17222e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .text-box {
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 100px;
+    }
+
+    .text-box h1 {
+        font-size: 30px;
+        animation: to_right 1s ease forwards .6s;
+    }
+
+    .text-box h1:nth-child(2) {
+        animation-delay: .7s;
+    }
+
+    .text-box .skills {
+        color: #00bfff;
+        font-weight: bold;
+    }
+
+    .text-box p {
+        margin: 35px 0;
+        font-size: 14px;
+        width: 90%;
+        animation: to_right 1s ease forwards .8s;
+    }
+
+    .icon-box {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        margin-bottom: 35px;
+    }
+
+    .icon-box a, i {
+        color: #00bfff;
+        padding: 10px;
+        font-size: 28px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .2s;
+        animation: to_right 1s ease forwards 1s;
+    }
+
+    .icon-box i:hover {
+        color: white;
+        background-color: #00bfff;
+        box-shadow: 0 0 15px #00bfff;
+    }
+
+    .img {
+        width: 50%;
+        background-position: center;
+        background-size: cover;
+        border: 4px solid white;
+        border-radius: 50%;
+        box-shadow: 5px 5px 50px #00bfff;
+        background-color: #00bfff;
+        animation: to_left 1s ease forwards 1s;
+        opacity: 1;
+        margin-top: 30px;
+        margin-left: 45px;
+    }
+
+    .page-content {
+        min-height: auto;
+        width: 100%;
+        padding: 20px;
+        background-color: #17222e;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .page-content h2 {
+        color: #00bfff;
+        margin-bottom: 10px;
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: #1f2b3a;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        align-items: center;
+    }
+
+    .flex-item {
+        background-color: #1f2b3a;
+        padding: 15px;
+        color: #333;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .flex-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px #00bfff;
+    }
+
+    .flex-item h3 {
+        color: #00bfff;
+        margin-bottom: 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .flex-item p {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+        color: white;
+    }
+
+    .flex-item a {
+        color: #00bfff;
+        text-align: center;
+    }
+
+    .flex-item ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+
+    .flex-item ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        text-align: left;
+        color: white;
+    }
+
+    #calculator-tool {
+        padding: 20px;
+        background-color: #17222e;
+        width: 100%;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #calculator-tool h2 {
+        font-size: 24px;
+        color: #00bfff;
+        margin-bottom: 10px;
+    }
+
+    #calculator-tool p {
+        font-size: 14px;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .calculator-form {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .calculator-form label {
+        display: block;
+        font-size: 14px;
+        color: #00bfff;
+        margin-top: 15px;
+    }
+
+    .calculator-form input,
+    .calculator-form select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    .calculator-form button {
+        background-color: #00AEEF;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+    .calculator-form button:hover {
+        background-color: #f44336;
+    }
+
+    .calculator-results {
+        width: 90%;
+        background-color: #1D2B44;
+        margin: 20px 0;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+    }
+
+    .calculator-results h3 {
+        font-size: 20px;
+        color: #00bfff;
+        margin-bottom: 10px;
+    }
+
+    .calculator-results p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .calculator-results span {
+        font-weight: bold;
+        color: #f44336;
+    }
+
+    .footercontainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footerlogo,
+    .footercontact,
+    .footernav,
+    .footersocialmedia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 10px;
+        margin-bottom: 20px;
+    }
+
+        .footernav ul li {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+    .scroll-to-top {
+        right: 10px;
+    }
+}
+
+/* Animations styles */
+@keyframes to_bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes to_right {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes to_left {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+=======================================================|
+Section 6: Misc.
+=======================================================|
+*/
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #00AEEF;
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1d2b44;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00AEEF;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #00AEEF #1d2b44;
+}

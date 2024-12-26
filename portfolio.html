@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio for Cody J. Tilley</title>
+    <meta name="description" content="Explore Cody J. Tilley's professional portfolio. A dedicated cybersecurity professional and student at University at Albany, with experience in IT, homeland security, and cybersecurity research.">
+    <meta name="keywords" content="Cody Tilley, Cybersecurity Portfolio, IT Experience, Cybersecurity Professional, University at Albany, Cybersecurity Skills, Salary Calculator">
+    <meta name="robots" content="noindex">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+    <div class="side-nav" id="side-nav">
+        <a href="#top" class="nav-link">Return to Top</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#accomplishments" class="nav-link">Accomplishments</a>
+        <a href="#calculator" class="nav-link">Calculator</a>
+        <a href="#footer" class="nav-link">Page Footer</a>
+    </div>
+    <!-- Borrowed from resume building project and adjusted to include a couple resources from final project -->
+    <header id="top">
+        <div class="rtn">
+            <a href="../index.html"><img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo"></a>
+            <h1>Click Image to Return<br>to CTC Cybersecurity</h1>
+        </div>
+    </header>
+    <section class="Home">
+        <div class="text-box">
+            <h1>Hi, my name is Cody Tilley</h1>
+            <h1>
+                I'm a
+                <span class="skills">Cybersecurity Professional</span>
+            </h1>
+            <p>As cybersecurity professional and a student with the Univeristy at Albany, I'm finishing my B.S. in Cybersecurity while gaining additinal experience to broaden my technical skills. I'm also a research fellow with the Virtual Institutes for Cyber and Electromagnetic Spectrum Research and Employ program working on a collaborative project to enhance UAV cyber defenses across military and civilian industries.</p>
+            <span class="icon-box">
+                <a href="https://www.facebook.com/cta0930/" aria-label="Facebook" target="_blank">
+                    <i class='bx bxl-facebook-circle'></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ctilley0124/" aria-label="LinkedIn" target="_blank">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+                <a href="https://github.com/cta0930" aria-label="Github Profile" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://discord.com/users/695969247825887243/" aria-label="Discord" target="_blank">
+                    <i class='bx bxl-discord-alt'></i>
+                </a>
+            </span>
+            <span class="btn-box">
+                <!-- See portfolio.js for references -->
+                <button type="button" class="btn" onclick="downloadResume()">Resume</button>
+                <button type="button" class="btn btn-2" onclick="navtoContact()">Contact me</button>
+            </span>
+        </div>
+        <img src="images/ctaPhoto.jpg" class="img" alt="Professional Photo of Cody J. Tilley">
+    </section>
+    <section class="page-content" id="experience">
+        <h2>Experience</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Enterprise Client Support Intern</h3>
+                <p><strong>American National Insurance</strong><br>Glenmont, NY<br><em>June 2024 - August 2024</em></p>
+                <ul>
+                    <li>Provided first-level technical support, troubleshooting desktop hardware and software issues.</li>
+                    <li>Assisted with system installations and maintenance, enhancing user productivity.</li>
+                    <li>Collaborated with IT team to streamline support processes, reducing response times.</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <h3>Public Safety Unit Intern</h3>
+                <p><strong>Division of Homeland Security and Emergency Services</strong> <br> Albany, NY <br> <em>Jan 2024 - May 2024</em></p>
+                <ul>
+                    <li>Conducted data analysis using SQL and Excel to support annual planning for public safety engagements.</li>
+                    <li>Researched past terrorist threats, contributing to the development of red team testing strategies.</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <h3>Recruitment Trainer/Instructor</h3>
+                <p><strong>United States Marine Corps</strong> <br> Various Locations <br> <em>June 2011 - August 2023</em></p>
+                <ul>
+                    <li>Led and trained over 120 Marines, managing $1.2 million in assets with zero losses.</li>
+                    <li>Developed training programs, licensing over 320 Marines in equipment operations.</li>
+                    <li>Mentored multinational teams on critical infrastructure projects in high-stakes environments.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="page-content" id="education">
+        <h2>Education & Skills</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3><a href="https://www.albany.edu" target="_blank">University at Albany, New York</a></h3>
+                <p>Bachelor of Science in Cybersecurity</p>
+                <p>Expected Graduation: May 2025</p>
+                <ul>
+                    <li>Cybersecurity and regulatory frameworks</li>
+                    <li>Penetration testing and vulnerability assessment</li>
+                    <li>Informatics, data visualization, and web development</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <h3><a href="https://www.nu.edu/" target="_blank">National University, La Jolla, CA </a></h3>
+                <p>90 Quarter Units - Non Matriculated</p>
+                <p>Aug 2013 - May 2017</p>
+                <ul>
+                    <li>Homeland Security and Emergency Management</li>
+                    <li>Criminology, psychology, and investigations</li>
+                    <li>Sociology, philosophy, and ethics</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Operating Systems: Windows, MacOS, UNIX</li>
+                    <li>Languages: Python, SQL, Bash</li>
+                    <li>Network Protocols: TCP/IP, DNS, FTP</li>
+                    <li>Penetration Testing Tools: Nmap, Hydra, Metasploit</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="page-content" id="accomplishments">
+        <h2>Accomplishments</h2>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h3>Certifications</h3>
+                <ul>
+                    <li>Intro to Cybersecurity Tools & Cyber Attacks from IBM</li>
+                    <li>Google IT Support Professional from Google</li>
+                    <li>Microsoft 365 Certified: Fundamentals from Microsoft</li>
+                    <li>Notary Public Albany County, Registration No. 01TI001267. Exp: 08/16/2027</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <h3>Professional Associations</h3>
+                <ul>
+                    <li>Virtual Institute of Cyber Operation and Research Fellowship</li>
+                    <li>Cyber Defense Organization & Digital Forensics Association</li>
+                    <li>Association for Information Science & Technology</li>
+                    <li>National Society of Leadership & Success</li>
+                </ul>
+            </div>
+            <div class="flex-item">
+                <h3>Awards & Scholarships</h3>
+                <ul>
+                    <li>Deans List Fall of 2023 and Spring of 2024</li>
+                    <li>UAlbany Merit Scholarship</li>
+                    <li>Poppo Family School for Veterans Scholarship</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="calculator-tool">
+        <h2>Salary Calculator Tool</h2>
+        <p>Calculate your weekly, monthly, and annual salary based on your hourly wage and hours worked per week. Includes federal and state taxes.</p>
+        <!-- Salary calculator form with all 50 states **Github link within portfolio.js file has all 50 states listed -->
+        <div class="flex-container">
+            <div class="calculator-form">
+                <form id="salary-form">
+                    <label for="hourly-pay">Hourly Pay ($):</label>
+                    <input type="number" id="hourly-pay" placeholder="Enter hourly wage" required>
+                    <label for="hours-per-week">Hours per Week:</label>
+                    <input type="number" id="hours-per-week" placeholder="Enter hours per week" required>
+                    <label for="state">Select Your State:</label>
+                    <select id="state" required>
+                        <option value="">--Select State--</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="South Dakota">South Dakota</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
+                    <button type="button" onclick="calculateSalary()">Calculate Salary</button>
+                </form>
+            </div>
+            <!-- Results to be displayed to user based on inputs -->
+            <div class="calculator-results">
+                <h3>Salary Breakdown:</h3>
+                <p>Salary is shown based on net pay as an estimation</p>
+                <p>Weekly Pay: <span id="weekly-pay">$0.00</span></p>
+                <p>Monthly Pay: <span id="monthly-pay">$0.00</span></p>
+                <p>Annual Pay: <span id="annual-pay">$0.00</span></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footercontainer">
+            <div class="footerlogo">
+                <img src="images/ctclogo69.png" alt="CTC Cybersecurity Logo">
+                <h5>&copy; 2024 CTC Cybersecurity<br>All Rights Reserved</h5>
+            </div>
+            <div class="footercontact">
+                <h4>Contact Information</h4>
+                <p>Phone: 518-309-2163<br>Email: <a href="mailto:cody.tilley@ctccybersecurity.com">cody.tilley@ctccybersecurity.com</a></p>
+                <address>Mailing Address:<br>P.O. Box 119,<br>Voorheesville, NY 12186</address>
+            </div>
+            <div class="footernavigation">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="/index.html" target="_blank">Home Page</a></li>
+                    <li><a href="/privacypolicy.html" target="_blank">Privacy Policy</a></li>
+                    <li><a href="/cookiepolicy.html" target="_blank">Cookie Policy</a></li>
+                    <li><a href="/termsandconditions.html" target="_blank">Terms & Conditions</a></li>
+                    <li><a href="/contact.html" target="_blank">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footersocialmedia">
+                <h4>Social Media</h4>
+                <a href="https://www.facebook.com/cta0930/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                    </svg>
+                </a>
+                <br>
+                <a href="https://www.linkedin.com/in/ctilley0124/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
+                    </svg>
+                </a>
+                <br>
+                <a href="https://github.com/cta0930" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 480 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2z"></path>
+                    </svg>
+                </a>
+                <br>
+                <a href="https://discord.com/users/695969247825887243/" target="_blank">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="5 5 13 13" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.914 14.58a8.998 8.998 0 0 1-.484.104 7.06 7.06 0 0 1-2.664-.01c-.154-.03-.372-.083-.653-.158l-.921 1.197c-2.273-.073-3.137-1.596-3.137-1.596 0-3.381 1.481-6.122 1.481-6.122 1.481-1.133 2.89-1.102 2.89-1.102l.403.525a1.12 1.12 0 0 1 .112-.01 8.527 8.527 0 0 1 2.314.01l.442-.525s1.41-.031 2.89 1.103c0 0 1.482 2.74 1.482 6.121 0 0-.875 1.522-3.148 1.596l-1.007-1.134zM10.076 11C9.475 11 9 11.45 9 12s.485 1 1.076 1c.6 0 1.075-.45 1.075-1 .01-.55-.474-1-1.075-1zm3.848 0c-.6 0-1.075.45-1.075 1s.485 1 1.075 1c.601 0 1.076-.45 1.076-1s-.475-1-1.076-1z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footerbanner">
+            <p>
+                The content provided on this site, including recommendations, tools, and advice, is for informational and educational purposes only.
+                CTC Cybersecurity is not responsible for any direct, indirect, or consequential damages arising from the use or reliance on any of the tools or content provided on this site. By using this site, you agree to do so at your own risk. For more details, please review our <a href="/termsandconditions.html" target="_blank">Terms and Conditions.</a>
+            </p>
+        </div>
+    </footer>
+    <a href="#top" class="scroll-to-top" id="scrolltoTopBtn">
+        &#8679;
+    </a>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>
