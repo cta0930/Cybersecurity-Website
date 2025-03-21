@@ -1,54 +1,56 @@
-﻿// Browser analysis tool full JS
-// listening for click to analyz-btn
+// Browser analysis tool full JS
 document.getElementById("analyze-btn").addEventListener("click", () => {
     document.getElementById("clear-btn").style.display = "inline-block";
     analyzeBrowser();
 });
-// listen for click to clear-btn and clears results and map
+
 document.getElementById("clear-btn").addEventListener("click", () => {
-    document.getElementById("results").querySelectorAll(".result-section ul").forEach((ul) => {
-        ul.innerHTML = "";
+    document.querySelectorAll("#results .result-section ul").forEach((ul) => {
+        ul.replaceChildren(); // clears safely
     });
     document.getElementById("map").style.display = "none";
     document.getElementById("clear-btn").style.display = "none";
 });
-// define function and items to display. I will number each and outline below. More can be added but for the sake of saving time we will limit to six.
+
 function analyzeBrowser() {
-    displayBrowserInfo();         //One:   https://github.com/bowser-js/bowser
-    displayNetworkInfo();         //Two:   Uses ipapi.co see: https://ipapi.co/api/#complete-location5 adapted from the JS example.
-    displayFingerprintingData();  //Three: Source = https://www.kelche.co/blog/web/fingerprinting/
-    displayTrackingHistory();     //Four:  Source = https://peterthaleikis.com/posts/how-to-check-do-not-track-(dnt)-in-javascript/
-    displaySecurityHeaders();     //Five   Completely simulated and not functional. My idea was to find a way to integrate security headers related to referrer policy and CSP. I need to find a different way to talk about browser security measures honestly.
-    displayRecommendations();     //Six    Using object references from https://www.w3schools.com/jsref/prop_html_innerhtml.asp for DOM element.
+    displayBrowserInfo();
+    displayNetworkInfo();
+    displayFingerprintingData();
+    displayTrackingHistory();
+    displaySecurityHeaders();
+    displayRecommendations();
 }
+
 // 1. Browser information
 function displayBrowserInfo() {
     const browserInfo = document.querySelector("#browser-info ul");
-    const userAgent = navigator.userAgent;
-    const language = navigator.language;
-    const cookiesEnabled = navigator.cookieEnabled ? "Yes" : "No";
-    browserInfo.innerHTML = `
-    <li><strong>User Agent:</strong> ${userAgent}</li>
-    <li><strong>Language:</strong> ${language}</li>
-    <li><strong>Cookies Enabled:</strong> ${cookiesEnabled}</li>
-  `;
+    browserInfo.replaceChildren();
+
+    const items = [
+        ["User Agent", navigator.userAgent],
+        ["Language", navigator.language],
+        ["Cookies Enabled", navigator.cookieEnabled ? "Yes" : "No"],
+    ];
+    items.forEach(([label, value]) => addListItem(browserInfo, label, value));
 }
+
 // 2. Network information
 function displayNetworkInfo() {
-    // uses fetch to send request to ipapi then extracts the data to be displayed in the hidden html fields once user interaction occurs via analyze-btn
     const networkInfo = document.querySelector("#network-info ul");
+    networkInfo.replaceChildren();
+
     fetch("https://ipapi.co/json/")
         .then((response) => response.json())
         .then((data) => {
-            //adding bold to better stand out
-            networkInfo.innerHTML = `
-        <li><strong>IP Address:</strong> ${data.ip}</li>
-        <li><strong>City:</strong> ${data.city}</li>
-        <li><strong>Region:</strong> ${data.region}</li>
-        <li><strong>Country:</strong> ${data.country_name}</li>
-        <li><strong>ISP:</strong> ${data.org}</li>
-      `;
-            //following leafletjs.com with minor adjustments. We fetched the IP data from ipapi in json format which includes the lat/long. Leaflet will center on this location using setView with zoom level 13. From there the rest of this is simple using Leaflets reference.
+            const items = [
+                ["IP Address", data.ip],
+                ["City", data.city],
+                ["Region", data.region],
+                ["Country", data.country_name],
+                ["ISP", data.org],
+            ];
+            items.forEach(([label, value]) => addListItem(networkInfo, label, value));
+
             const mapDiv = document.getElementById("map");
             mapDiv.style.display = "block";
             const map = L.map("map").setView([data.latitude, data.longitude], 13);
@@ -56,24 +58,30 @@ function displayNetworkInfo() {
             L.marker([data.latitude, data.longitude]).addTo(map).bindPopup("Your Approximate Location").openPopup();
         })
         .catch(() => {
-            networkInfo.innerHTML = "<li>Unable to retrieve network information.</li>";
+            addListItem(networkInfo, "", "Unable to retrieve network information.");
         });
 }
+
 // 3. Fingerprinting data
 function displayFingerprintingData() {
     const fingerprintingInfo = document.querySelector("#fingerprinting-info ul");
+    fingerprintingInfo.replaceChildren();
+
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     ctx.fillText("Browser Fingerprinting", 10, 50);
     const canvasData = canvas.toDataURL();
-    fingerprintingInfo.innerHTML = `
-    <li><strong>Canvas Fingerprint:</strong> ${canvasData.slice(0, 50)}</li>
-    <li><strong>Screen Resolution:</strong> ${window.screen.width}x${window.screen.height}</li>
-    <li><strong>Time Zone:</strong> ${Intl.DateTimeFormat().resolvedOptions().timeZone}</li>
-    <li><strong>WebGL Renderer:</strong> ${getWebGLRenderer()}</li>
-  `;
+
+    const items = [
+        ["Canvas Fingerprint", canvasData.slice(0, 50)],
+        ["Screen Resolution", `${window.screen.width}x${window.screen.height}`],
+        ["Time Zone", Intl.DateTimeFormat().resolvedOptions().timeZone],
+        ["WebGL Renderer", getWebGLRenderer()],
+    ];
+    items.forEach(([label, value]) => addListItem(fingerprintingInfo, label, value));
 }
-// Helper used for WebGL rendering info
+
+// Helper for WebGL info
 function getWebGLRenderer() {
     const canvas = document.createElement("canvas");
     const gl = canvas.getContext("webgl");
@@ -81,32 +89,57 @@ function getWebGLRenderer() {
     const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
     return debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "Unavailable";
 }
+
 // 4. Tracking history
 function displayTrackingHistory() {
     const trackingInfo = document.querySelector("#tracking-info ul");
+    trackingInfo.replaceChildren();
 
-    trackingInfo.innerHTML = `
-    <li><strong>Referrer:</strong> ${document.referrer || "None"}</li>
-    <li><strong>Cookies in Use:</strong> ${document.cookie.split("; ").length || 0}</li>
-    <li><strong>Do Not Track:</strong> ${navigator.doNotTrack || "Not Enabled"}</li>
-  `;
+    const items = [
+        ["Referrer", document.referrer || "None"],
+        ["Cookies in Use", document.cookie ? document.cookie.split("; ").length.toString() : "0"],
+        ["Do Not Track", navigator.doNotTrack || "Not Enabled"],
+    ];
+    items.forEach(([label, value]) => addListItem(trackingInfo, label, value));
 }
-// 5. Security header information
+
+// 5. Simulated security header info
 function displaySecurityHeaders() {
     const securityInfo = document.querySelector("#security-headers ul");
-    securityInfo.innerHTML = `
-    <li><strong>Referrer Policy:</strong> Simulated</li>
-    <li><strong>Content Security Policy:</strong> Simulated</li>
-  `;
+    securityInfo.replaceChildren();
+
+    const items = [
+        ["Referrer Policy", "Simulated"],
+        ["Content Security Policy", "Simulated"],
+    ];
+    items.forEach(([label, value]) => addListItem(securityInfo, label, value));
 }
-// 6. Privacy recommendations general statements
+
+// 6. Privacy recommendations
 function displayRecommendations() {
     const recommendations = document.querySelector("#recommendations ul");
-    recommendations.innerHTML = `
-    <li>Use privacy-focused browsers like Brave or Firefox.</li>
-    <li>Install browser extensions like Privacy Badger.</li>
-    <li>Disable cookies and tracking in your browser settings.</li>
-    <li>Use a VPN to mask your IP address.</li>
-    <li>Enable two-factor authentication for accounts.</li>
-  `;
+    recommendations.replaceChildren();
+
+    const list = [
+        "Use privacy-focused browsers like Brave or Firefox.",
+        "Install browser extensions like Privacy Badger.",
+        "Disable cookies and tracking in your browser settings.",
+        "Use a VPN to mask your IP address.",
+        "Enable two-factor authentication for accounts.",
+    ];
+    list.forEach((text) => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        recommendations.appendChild(li);
+    });
+}
+
+// Safe helper for adding labeled <li>
+function addListItem(parent, label, value) {
+    const li = document.createElement("li");
+    const strong = document.createElement("strong");
+    strong.textContent = label ? `${label}: ` : "";
+    li.appendChild(strong);
+    li.appendChild(document.createTextNode(value));
+    parent.appendChild(li);
 }
