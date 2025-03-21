@@ -115,8 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const chars =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:',.<>?";
             let password = "";
+            const randomValues = new Uint32Array(length);
+            window.crypto.getRandomValues(randomValues);
             for (let i = 0; i < length; i++) {
-                const randomIndex = Math.floor(Math.random() * chars.length);
+                const randomIndex = randomValues[i] % chars.length;
                 password += chars[randomIndex];
             }
             return password;
